@@ -35,19 +35,20 @@ struct ContentView: View {
                             .shadow(color:.black,radius: 2,y:2)
                     })
                     .padding(.bottom,30)
-                    Button(action: {
-                        
-                    }, label: {
-                        Text("Registrarse")
-                            .font(.title)
-                            .bold()
-                            .foregroundColor(.white)
-                            .padding(.vertical,15)
-                            .padding(.horizontal,60)
-                            .background(Color("ColorAzulVerdeOscuro"))
-                            .cornerRadius(50)
-                            .shadow(color:.black,radius: 2,y:2)
-                    })
+                    
+//                    Button(action: {
+//
+//                    }, label: {
+//                        Text("Registrarse")
+//                            .font(.title)
+//                            .bold()
+//                            .foregroundColor(.white)
+//                            .padding(.vertical,15)
+//                            .padding(.horizontal,60)
+//                            .background(Color("ColorAzulVerdeOscuro"))
+//                            .cornerRadius(50)
+//                            .shadow(color:.black,radius: 2,y:2)
+//                    })
                 }
                 
                 

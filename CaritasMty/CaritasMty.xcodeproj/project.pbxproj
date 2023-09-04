@@ -11,6 +11,9 @@
 		FB9E54672AA157EA00FB7644 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9E54662AA157EA00FB7644 /* ContentView.swift */; };
 		FB9E54692AA157EA00FB7644 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9E54682AA157EA00FB7644 /* Assets.xcassets */; };
 		FB9E546C2AA157EA00FB7644 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9E546B2AA157EA00FB7644 /* Preview Assets.xcassets */; };
+		FBA032D62AA68ADE002B7D72 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA032D52AA68ADE002B7D72 /* Data.swift */; };
+		FBB0DD412AA67281003DE6A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0DD402AA67281003DE6A8 /* User.swift */; };
+		FBB0DD432AA67518003DE6A8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0DD422AA67518003DE6A8 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		FB9E54662AA157EA00FB7644 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FB9E54682AA157EA00FB7644 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB9E546B2AA157EA00FB7644 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FBA032D52AA68ADE002B7D72 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		FBB0DD402AA67281003DE6A8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FBB0DD422AA67518003DE6A8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,9 @@
 			children = (
 				FB9E54642AA157EA00FB7644 /* CaritasMtyApp.swift */,
 				FB9E54662AA157EA00FB7644 /* ContentView.swift */,
+				FBB0DD422AA67518003DE6A8 /* LoginView.swift */,
+				FBA032D52AA68ADE002B7D72 /* Data.swift */,
+				FBB0DD402AA67281003DE6A8 /* User.swift */,
 				FB9E54682AA157EA00FB7644 /* Assets.xcassets */,
 				FB9E546A2AA157EA00FB7644 /* Preview Content */,
 			);
@@ -138,7 +147,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB9E54672AA157EA00FB7644 /* ContentView.swift in Sources */,
+				FBA032D62AA68ADE002B7D72 /* Data.swift in Sources */,
 				FB9E54652AA157EA00FB7644 /* CaritasMtyApp.swift in Sources */,
+				FBB0DD432AA67518003DE6A8 /* LoginView.swift in Sources */,
+				FBB0DD412AA67281003DE6A8 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
