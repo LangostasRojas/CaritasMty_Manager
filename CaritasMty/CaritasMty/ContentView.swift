@@ -29,24 +29,22 @@ struct ContentView: View {
                             .bold()
                             .foregroundColor(.white)
                             .padding(.vertical,15)
-                            .padding(.horizontal,70)
+                            .padding(.horizontal,50)
                             .background(Color("ColorAzulVerdePaleta"))
                             .cornerRadius(50)
-                            .shadow(color:.black,radius: 2,y:2)
                     })
                     .padding(.bottom,30)
                     Button(action: {
                         
                     }, label: {
                         Text("Registrarse")
-                            .font(.title)
+                            .font(.title2)
                             .bold()
                             .foregroundColor(.white)
                             .padding(.vertical,15)
                             .padding(.horizontal,60)
                             .background(Color("ColorAzulVerdeOscuro"))
                             .cornerRadius(50)
-                            .shadow(color:.black,radius: 2,y:2)
                     })
                 }
                 
