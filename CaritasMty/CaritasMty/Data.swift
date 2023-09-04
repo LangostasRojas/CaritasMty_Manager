@@ -49,7 +49,6 @@ func login(username: String, password: String){
         } else if let data = data {
             if let responseString = String(data: data, encoding: .utf8){
                 DispatchQueue.main.async {
-                    self.response = responseString
                 }
             }
             
