@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB02D7BA2AA79552002956F4 /* BotonUni.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB02D7B92AA79552002956F4 /* BotonUni.swift */; };
 		FB9E54652AA157EA00FB7644 /* CaritasMtyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9E54642AA157EA00FB7644 /* CaritasMtyApp.swift */; };
 		FB9E54672AA157EA00FB7644 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9E54662AA157EA00FB7644 /* ContentView.swift */; };
 		FB9E54692AA157EA00FB7644 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9E54682AA157EA00FB7644 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB02D7B92AA79552002956F4 /* BotonUni.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotonUni.swift; sourceTree = "<group>"; };
 		FB9E54612AA157EA00FB7644 /* CaritasMty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaritasMty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9E54642AA157EA00FB7644 /* CaritasMtyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaritasMtyApp.swift; sourceTree = "<group>"; };
 		FB9E54662AA157EA00FB7644 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				FB9E54642AA157EA00FB7644 /* CaritasMtyApp.swift */,
 				FB9E54662AA157EA00FB7644 /* ContentView.swift */,
 				FBB0DD422AA67518003DE6A8 /* LoginView.swift */,
+				FB02D7B92AA79552002956F4 /* BotonUni.swift */,
 				FB9EF7FA2AA69B1700E1849F /* HomeView.swift */,
 				FBA032D52AA68ADE002B7D72 /* Data.swift */,
 				FBB0DD402AA67281003DE6A8 /* User.swift */,
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB9E54672AA157EA00FB7644 /* ContentView.swift in Sources */,
+				FB02D7BA2AA79552002956F4 /* BotonUni.swift in Sources */,
 				FBA032D62AA68ADE002B7D72 /* Data.swift in Sources */,
 				FB9E54652AA157EA00FB7644 /* CaritasMtyApp.swift in Sources */,
 				FB9EF7FB2AA69B1700E1849F /* HomeView.swift in Sources */,
