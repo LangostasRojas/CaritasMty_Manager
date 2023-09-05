@@ -35,10 +35,21 @@ struct LoginView: View {
                         .cornerRadius(15)
                         .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color("ColorAzulVerdePaleta"), lineWidth: 3))
                         .autocorrectionDisabled(true)
+                        
                     
                     Spacer().frame(height: 50)
                     
-                    TextField("Ingresa tu password", text: $password, prompt: Text("Ingresa tu contraseña").foregroundColor(.white))
+//                    TextField("Ingresa tu password", text: $password, prompt: Text("Ingresa tu contraseña").foregroundColor(.white))
+//                        .padding()
+//                        .frame(width: 350, height: 55)
+//                        .background(.clear)
+//                        .tint(.white)
+//                        .foregroundColor(.white)
+//                        .cornerRadius(15)
+//                        .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color("ColorAzulVerdePaleta"), lineWidth: 3))
+//                        .autocorrectionDisabled(true)
+                        
+                    SecureField("Ingresa tu password", text: $password, prompt: Text("Ingresa tu contraseña").foregroundColor(.white))
                         .padding()
                         .frame(width: 350, height: 55)
                         .background(.clear)
@@ -46,11 +57,17 @@ struct LoginView: View {
                         .foregroundColor(.white)
                         .cornerRadius(15)
                         .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color("ColorAzulVerdePaleta"), lineWidth: 3))
-                    
-                    Spacer().frame(height: 55)
+                        .autocorrectionDisabled(true)
                     
                     Button(action: {
-                        
+                        login(usernamelog: "\(username)", passwordlog: "\(password)") {
+                            (user, error) in
+                            if let user = user {
+                                print("Logged in user: \(user.userName)")
+                            } else if let error = error {
+                                print("Error logging in: \(error.localizedDescription)")
+                            }
+                        }
                     }, label: {
                         Text("Iniciar Sesión")
                             .font(.title)

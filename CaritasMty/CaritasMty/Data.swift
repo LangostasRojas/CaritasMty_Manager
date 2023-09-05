@@ -19,16 +19,17 @@ import Foundation
 //    print(error.localizedDescription)
 //}
 
-func login(username: String, password: String){
+func login(usernamelog: String, passwordlog: String, completion: @escaping (User?, Error?) -> Void){
     
     
     guard let url = URL(string:"http://10.22.211.207:10201/sign-in") else{
+        completion(nil, NSError(domain: "Invalid URL", code: 400, userInfo: nil))
         return
     }
     
     let body: [String: Any] = [
-        "username": "\(username)",
-        "password": "\(password)"
+        "username": "\(usernamelog)",
+        "password": "\(passwordlog)"
     ]
     
     let jsonData = try? JSONSerialization.data(withJSONObject: body)
@@ -43,15 +44,31 @@ func login(username: String, password: String){
     
     
     URLSession.shared.dataTask(with: request){
-        data, _, error in
+        data, response, error in
         if let error = error{
-            print("Error: \(error)")
-        } else if let data = data {
-            if let responseString = String(data: data, encoding: .utf8){
+            DispatchQueue.main.async {
+                completion(nil, error)
+            }
+            return
+        }
+        if let data = data {
+            let responseString = String(data: data, encoding: .utf8) ?? "Invalid data"
+            
+            
+            do {
+                let decoder =  JSONDecoder()
+                let user = try decoder.decode(User.self, from: data)
                 DispatchQueue.main.async {
-                    self.response = responseString
+                    completion(user, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    print("Error: \(responseString)")
+                    completion(nil, error)
                 }
             }
+                
+            
             
         }
     }.resume()
