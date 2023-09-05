@@ -59,12 +59,14 @@ func login(usernamelog: String, passwordlog: String, completion: @escaping (User
                 let decoder =  JSONDecoder()
                 let user = try decoder.decode(User.self, from: data)
                 DispatchQueue.main.async {
+
                     completion(user, nil)
                 }
             } catch {
                 DispatchQueue.main.async {
                     print("Error: \(responseString)")
                     completion(nil, error)
+
                 }
             }
                 
