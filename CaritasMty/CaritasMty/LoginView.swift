@@ -59,7 +59,7 @@ struct LoginView: View {
                         .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color("ColorAzulVerdePaleta"), lineWidth: 3))
                         .autocorrectionDisabled(true)
                     
-                    Button(action: {
+                    BotonUni(textoboton: "Iniciar Sesion", colorboton: "ColorAzulVerdePaleta", widthboton: 280.0, heightboton: 60.0) {
                         login(usernamelog: "\(username)", passwordlog: "\(password)") {
                             (user, error) in
                             if let user = user {
@@ -68,18 +68,7 @@ struct LoginView: View {
                                 print("Error logging in: \(error.localizedDescription)")
                             }
                         }
-                    }, label: {
-                        Text("Iniciar Sesión")
-                            .font(.title)
-                            .bold()
-                            .foregroundColor(.white)
-                        
-                            .frame(width: 280.0, height: 60.0)
-                            .background(Color("ColorAzulVerdePaleta"))
-                            .cornerRadius(30)
-                            .shadow(color:.black,radius: 2,y:2)
-                    })
-                    .padding(80)
+                    }.padding(80)
                 }
             }
         }
