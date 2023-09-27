@@ -9,3 +9,4 @@ import Foundation
 
 var repartidor: User?
 var listaTicketsR: Array<Ticket>?
+var listaTicketsManagers: Array<Array<Ticket>>?
