@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+var datosManager = cargarDatosManager()
 
 struct TicketA: View {
-    var datosManager = cargarDatosManager()
+    @State private var sectionStates: [Bool] = Array(repeating: false, count: datosManager.count)
+
+    
     var body: some View {
         NavigationStack{
             ZStack{
@@ -30,20 +33,12 @@ struct TicketA: View {
                         .frame(width: 170,height: 7)
                         .cornerRadius(20)
                         .offset(x:-70,y:-25)
-                    ScrollView{
-                        LazyVStack(spacing: 10){
-                            ForEach(0..<datosManager.count, id: \.self) { recolector in
-                                ForEach(0..<datosManager[recolector].count, id: \.self){ ticketIndi in
-                                    NavigationLink(destination: VistaTicket(ticket: datosManager[recolector][ticketIndi])) {
-                                        
-                                        ListaIndividual(ticket:datosManager[recolector][ticketIndi])
-                                    }
-                                }
-                                
-                                
-                                
-                            }
-                        }
+                    ScrollView {
+                               LazyVStack(spacing: 10) {
+                                   ForEach(0..<datosManager.count, id: \.self) { recolector in
+                                       SectionView(recolector: recolector, isExpanded: $sectionStates[recolector])
+                                   }
+                               }
                     }
                     
                     
@@ -71,5 +66,38 @@ struct TicketA: View {
         static var previews: some View {
             TicketA()
         }
+    }
+}
+
+struct SectionView: View {
+    let recolector: Int
+    @Binding var isExpanded: Bool
+
+    var body: some View {
+        VStack {
+            Button(action: {
+                withAnimation {
+                    self.isExpanded.toggle()
+                }
+            }) {
+                HStack {
+                    Text("Recolector \(recolector + 1)")
+                    Spacer()
+                    Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
+                }
+                .padding(.horizontal)
+            }
+
+            if isExpanded {
+                ForEach(0..<datosManager[recolector].count, id: \.self) { ticketIndi in
+                    NavigationLink(destination: VistaTicket(ticket: datosManager[recolector][ticketIndi])) {
+                        ListaIndividual(ticket: datosManager[recolector][ticketIndi])
+                    }
+                }
+            }
+        }
+        .background(Color(UIColor.systemGroupedBackground))
+        .cornerRadius(8)
+        .padding(.vertical, 3)
     }
 }
