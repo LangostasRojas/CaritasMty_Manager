@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     var body: some View {
+<<<<<<< Updated upstream
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
@@ -16,6 +18,9 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+=======
+       Login()
+>>>>>>> Stashed changes
     }
 }
 
