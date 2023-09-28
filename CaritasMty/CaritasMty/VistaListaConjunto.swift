@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TicketA: View {
     var datosManager = cargarDatosManager()
+    var datosManager2 = cargarDatos2()
     var body: some View {
         NavigationStack{
             ZStack{
@@ -30,6 +31,9 @@ struct TicketA: View {
                         .frame(width: 170,height: 7)
                         .cornerRadius(20)
                         .offset(x:-70,y:-25)
+                    
+                    
+                    
                     ScrollView{
                         LazyVStack(spacing: 10){
                             ForEach(0..<datosManager.count, id: \.self) { recolector in

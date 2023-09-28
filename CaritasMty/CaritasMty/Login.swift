@@ -95,11 +95,21 @@ struct Login: View {
                                  print(user)
                                 
                                  listaTicketsR = callTickets(userID: user.userId, token: user.accessToken)
+                                 
+                                 listaTicketsManagers2 = callRecolectores(userID: user.userId, token: user.accessToken)
+                                 
                                  if let unwrappedListaTicketsR = listaTicketsR {
                                      print(unwrappedListaTicketsR)
                                  } else {
                                      print("listaTicketsR is nil")
                                  }
+                                 
+                                 if let unwrappedListaTicketsManagers2 = listaTicketsManagers2 {
+                                     print(unwrappedListaTicketsManagers2)
+                                 } else {
+                                     print("unwrappedListaTicketsManagers2 is nil")
+                                 }
+                                 
                                  shouldNav = true
                              } else if let error = error {
 

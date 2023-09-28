@@ -22,6 +22,8 @@
 		FBA032D62AA68ADE002B7D72 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA032D52AA68ADE002B7D72 /* Data.swift */; };
 		FBB0DD412AA67281003DE6A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0DD402AA67281003DE6A8 /* User.swift */; };
 		FBB0DD432AA67518003DE6A8 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0DD422AA67518003DE6A8 /* Login.swift */; };
+		FBD80E092AC4E708001535A3 /* GetRecolectores.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD80E082AC4E708001535A3 /* GetRecolectores.swift */; };
+		FBD80E0B2AC4E822001535A3 /* Recolector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD80E0A2AC4E822001535A3 /* Recolector.swift */; };
 		FBFD244C2AA8D29F00C81625 /* VistasDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFD244B2AA8D29F00C81625 /* VistasDetailed.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		FBA032D52AA68ADE002B7D72 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		FBB0DD402AA67281003DE6A8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FBB0DD422AA67518003DE6A8 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		FBD80E082AC4E708001535A3 /* GetRecolectores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecolectores.swift; sourceTree = "<group>"; };
+		FBD80E0A2AC4E822001535A3 /* Recolector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recolector.swift; sourceTree = "<group>"; };
 		FBFD244B2AA8D29F00C81625 /* VistasDetailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistasDetailed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				FB5A52D82AC4D8AD0065ED04 /* GetTicket.swift */,
+				FBD80E082AC4E708001535A3 /* GetRecolectores.swift */,
 				FB2E705A2AC4CE9500C6C424 /* GlobalVariables.swift */,
 				FB9E54632AA157EA00FB7644 /* CaritasMty */,
 				FB9E54622AA157EA00FB7644 /* Products */,
@@ -87,6 +92,7 @@
 				FBB0DD402AA67281003DE6A8 /* User.swift */,
 				FBFD244B2AA8D29F00C81625 /* VistasDetailed.swift */,
 				FB2E70562AC4CDED00C6C424 /* Ticket.swift */,
+				FBD80E0A2AC4E822001535A3 /* Recolector.swift */,
 				FB2E70582AC4CE0200C6C424 /* ModelData.swift */,
 				FB9E54682AA157EA00FB7644 /* Assets.xcassets */,
 				FB9E546A2AA157EA00FB7644 /* Preview Content */,
@@ -184,7 +190,9 @@
 				FB2E70532AC4C76B00C6C424 /* ListaIndividual.swift in Sources */,
 				FBFD244C2AA8D29F00C81625 /* VistasDetailed.swift in Sources */,
 				FBB0DD432AA67518003DE6A8 /* Login.swift in Sources */,
+				FBD80E092AC4E708001535A3 /* GetRecolectores.swift in Sources */,
 				FBB0DD412AA67281003DE6A8 /* User.swift in Sources */,
+				FBD80E0B2AC4E822001535A3 /* Recolector.swift in Sources */,
 				FB5A52D92AC4D8AD0065ED04 /* GetTicket.swift in Sources */,
 				FB2E70552AC4CD6000C6C424 /* VistaListaConjunto.swift in Sources */,
 			);
