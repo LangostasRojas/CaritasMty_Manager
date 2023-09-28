@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TicketA: View {
+struct VistaListaConjunto: View {
     var datosManager = cargarDatosManager()
     var datosManager2 = cargarDatos2()
     var body: some View {
@@ -71,9 +71,9 @@ struct TicketA: View {
         }
     }
     
-    struct TicketA_Previews: PreviewProvider {
+    struct VistaListaConjunto_Previews: PreviewProvider {
         static var previews: some View {
-            TicketA()
+            VistaListaConjunto()
         }
     }
 }

@@ -120,7 +120,7 @@ struct Login: View {
                              }
                         }.background(
                             NavigationLink(destination:
-                                            TicketA().navigationBarBackButtonHidden(true), isActive: $shouldNav){
+                                            VistaListaConjunto().navigationBarBackButtonHidden(true), isActive: $shouldNav){
                                 
                             }).padding(80)
                         

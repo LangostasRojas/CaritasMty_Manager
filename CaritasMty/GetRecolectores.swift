@@ -25,9 +25,7 @@ func callRecolectores(userID: Int, token: String) -> [Recolector] {
         if let data = data {
             do {
                 let ticketList = try jsonDecoder.decode([Recolector].self, from: data)
-                print(ticketList)
                 lista = ticketList
-                print(lista)
             } catch {
                 print(error)
             }
