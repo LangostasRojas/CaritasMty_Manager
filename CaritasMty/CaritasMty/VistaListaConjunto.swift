@@ -66,6 +66,7 @@ struct TicketA: View {
         static var previews: some View {
             TicketA()
         }
+        
     }
 }
 
