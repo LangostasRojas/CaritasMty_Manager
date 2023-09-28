@@ -20,7 +20,7 @@ struct Ticket: Codable, Identifiable {
         case nombre = "nombre"
         case importe = "importe"
         case direccion = "direccion"
-        case estatusVisita = "estatusVisita"
+        case estatusVisita = "estatus"
     }
 
     init(id: Int, nombre: String, importe: Float, direccion: String, estatusVisita: Int) {

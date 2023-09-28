@@ -19,6 +19,7 @@ struct ListaIndividual: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100)
                     .padding(.trailing)
+                    .padding(.leading, 40)
                 
                 VStack(alignment: .leading){
                     Text("\(ticket.nombre)")
@@ -35,6 +36,7 @@ struct ListaIndividual: View {
                 Circle()
                     .frame(width: 20.0)
                     .foregroundColor(Color(colorDeTicket))
+                    .padding(.trailing,30)
                     
                     
                 
@@ -43,6 +45,7 @@ struct ListaIndividual: View {
                 
             }.padding()
                 .background(Color("BgColor"))
+                .padding(.vertical,15)
             
         }
     }

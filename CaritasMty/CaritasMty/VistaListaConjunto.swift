@@ -32,7 +32,7 @@ struct TicketA: View {
                         .fill(Color("ColorAzulVerdePaleta"))
                         .frame(width: 170,height: 7)
                         .cornerRadius(20)
-                        .offset(x:-70,y:-25)
+                        .offset(x:-83,y:-25)
                     ScrollView {
                                LazyVStack(spacing: 10) {
                                    ForEach(0..<datosManager.count, id: \.self) { recolector in
@@ -82,21 +82,46 @@ struct SectionView: View {
             }) {
                 HStack {
                     Text("Recolector \(recolector + 1)")
+                        .font(.system(size: 35))
+                        .foregroundColor(.white)
+                        .bold()
+                        .padding(.leading,30)
                     Spacer()
                     Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
+                        .resizable(resizingMode: .stretch)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20)
+                        .foregroundColor(Color("ColorAzulVerdePaleta"))
+                        .padding(.trailing,30)
+
+                    
                 }
                 .padding(.horizontal)
+                .padding(.vertical,10)
+                
+                
             }
+            Rectangle()
+                .fill(Color("ColorAzulVerdePaleta"))
+                .frame(width: 170,height: 3)
+                .cornerRadius(20)
+                .padding(.vertical,13)
+            
 
             if isExpanded {
                 ForEach(0..<datosManager[recolector].count, id: \.self) { ticketIndi in
                     NavigationLink(destination: VistaTicket(ticket: datosManager[recolector][ticketIndi])) {
                         ListaIndividual(ticket: datosManager[recolector][ticketIndi])
                     }
+                    
                 }
+                Rectangle()
+                    .fill(Color("ColorAzulVerdePaleta"))
+                    .frame(width: 170,height: 7)
+                    .cornerRadius(20)
+                    .padding(.bottom,40)
             }
         }
-        .background(Color(UIColor.systemGroupedBackground))
         .cornerRadius(8)
         .padding(.vertical, 3)
     }
