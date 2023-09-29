@@ -11,7 +11,7 @@ func callRecolectores(userID: Int, token: String) -> [Recolector] {
     
     var lista: [Recolector] = []
     
-    var request = URLRequest(url: URL(string: "http://10.22.216.78:10204/get-manager-collectors")!, timeoutInterval: Double.infinity)
+    var request = URLRequest(url: URL(string: "http://10.22.228.116:10204/get-manager-collectors")!, timeoutInterval: Double.infinity)
     request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
 
     request.httpMethod = "GET"

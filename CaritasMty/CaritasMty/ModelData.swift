@@ -18,27 +18,6 @@ func cargarDatos() -> Array<Ticket>{
     return tickets
 }
 
-func cargarDatosManager() -> Array<Array<Ticket>>{
-    var ticktsManager = [
-    [
-        Ticket(id: 4, nombre: "Minja", importe: 40400, direccion:"Ciudad Gotica", estatus: "En ruta"),
-        Ticket(id: 5, nombre: "Juancho", importe: 100, direccion:"Ciudad Gotica", estatus: "En ruta"),
-        Ticket(id: 8, nombre: "Jose", importe: 200000.2,direccion:"Ciudad Gotica", estatus: "En ruta")
-    ],
-    [
-        Ticket(id: 4, nombre: "Minja", importe: 40400, direccion:"Ciudad Gotica", estatus: "En ruta"),
-        Ticket(id: 5, nombre: "Juancho", importe: 100, direccion:"Ciudad Gotica", estatus: "En ruta"),
-        Ticket(id: 8, nombre: "Jose", importe: 200000.2,direccion:"Ciudad Gotica", estatus: "En ruta")
-    ],
-    [
-        Ticket(id: 4, nombre: "Minja", importe: 40400, direccion:"Ciudad Gotica", estatus: "En ruta"),
-        Ticket(id: 5, nombre: "Juancho", importe: 100, direccion:"Ciudad Gotica", estatus: "En ruta"),
-        Ticket(id: 8, nombre: "Jose", importe: 200000.2,direccion:"Ciudad Gotica", estatus: "En ruta")
-    ]
-    ]
-    return ticktsManager
-}
-
 func cargarDatos2() -> Array<Recolector>{
     var recolectores = [
         Recolector(idR: 1, nombreR: "Kraken", Tickets: [Ticket(id: 4, nombre: "Minja", importe: 40400, direccion:"Ciudad Gotica", estatus: "En ruta"),Ticket(id: 5, nombre: "Juancho", importe: 100, direccion:"Ciudad Gotica", estatus: "En ruta"),

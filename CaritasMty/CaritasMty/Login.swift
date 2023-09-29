@@ -16,7 +16,7 @@ struct Login: View {
 
     @State var boolalerta: Bool = false
 
-    @State var lista: Array<Ticket> = []
+    @State var lista: Array<Recolector> = []
     @State var shouldNav: Bool = false
     var body: some View {
         NavigationStack{
