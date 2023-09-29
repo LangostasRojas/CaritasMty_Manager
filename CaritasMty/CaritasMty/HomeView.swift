@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+//    @State var usuario: Array<User> = []
     var body: some View {
         NavigationStack{
             VStack{
@@ -29,28 +30,34 @@ struct HomeView: View {
                             .fill(Color("ColorAzulVerdePaleta"))
                             .frame(width: 150,height: 5)
                             .cornerRadius(20)
-                        Text("Nombre del Manager ")
-                            .font(.system(size:37))
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .multilineTextAlignment(.center)
-                            .frame(width: 200)
-                            .padding(.bottom,30)
-                        NavigationLink("Tickets",destination: VistaListaConjunto())
-                            .frame(width: 150)
-                            .font(.title2)
-                            .bold()
-                            .foregroundColor(.white)
-                            .padding(.vertical,15)
-                            .padding(.horizontal,70)
-                            .background(Color("ColorAzulVerdePaleta"))
-                            .cornerRadius(50)
-                            .shadow(color:.black,radius: 2,y:2)
-                            .padding(.bottom,30)
+                        
+                        if let usuario = repartidor {
+                            
+                            Text("\(usuario.name)")
+                                .font(.system(size:37))
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .multilineTextAlignment(.center)
+                                .frame(width: 200)
+                                .padding(.bottom,30)
+                            
+                        }
+                        
+                        //                        NavigationLink("Tickets",destination: VistaListaConjunto())
+                        //                            .frame(width: 150)
+                        //                            .font(.title2)
+                        //                            .bold()
+                        //                            .foregroundColor(.white)
+                        //                            .padding(.vertical,15)
+                        //                            .padding(.horizontal,70)
+                        //                            .background(Color("ColorAzulVerdePaleta"))
+                        //                            .cornerRadius(50)
+                        //                            .shadow(color:.black,radius: 2,y:2)
+                        //                            .padding(.bottom,30)
                         Button(action: {
                             
                         }, label: {
-                            Text("Repartidores")
+                            Text("Tickets")
                                 .frame(width: 150)
                                 .font(.title2)
                                 .bold()
@@ -62,6 +69,18 @@ struct HomeView: View {
                                 .shadow(color:.black,radius: 2,y:2)
                         })
                         .padding(.bottom,30)
+                        NavigationLink("Recolectores",destination: VistaListaConjunto())
+                            .frame(width: 150)
+                            .font(.title2)
+                            .bold()
+                            .foregroundColor(.white)
+                            .padding(.vertical,15)
+                            .padding(.horizontal,70)
+                            .background(Color("ColorAzulVerdePaleta"))
+                            .cornerRadius(50)
+                            .shadow(color:.black,radius: 2,y:2)
+                            .padding(.bottom,30)
+                        
                         
                     }
                     
@@ -74,11 +93,22 @@ struct HomeView: View {
             
         }
         
+//        .onAppear(){
+//
+//            if let repartidor = repartidor {
+//                usuario = repartidor
+//            }
+//
+//        }
+        
     }
 }
+
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
+        
         HomeView()
+        
     }
 }
 
