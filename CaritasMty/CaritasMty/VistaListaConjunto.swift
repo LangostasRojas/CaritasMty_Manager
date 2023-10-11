@@ -13,6 +13,9 @@ var datosManager: Array<Recolector> = []
 struct VistaListaConjunto: View {
     @State var listaTemp: Array<Recolector> = []
     @State var sectionStates: [Bool] = []
+    //@State var ReloadScroll: Bool =
+
+    
     
         var body: some View {
         NavigationStack{
@@ -35,17 +38,21 @@ struct VistaListaConjunto: View {
                         .frame(width: 250,height: 7)
                         .cornerRadius(20)
                         .offset(x:-34,y:-25)
-                    
-                    ScrollView {
-                               LazyVStack(spacing: 10) {
-                                   
-                                   ForEach(0..<listaTemp.count, id:\.self) { recolectorItem in
-                                       SectionView(recolector: listaTemp[recolectorItem].nombreR, isExpanded: $sectionStates[recolectorItem])
+                    ScrollViewReader { reader in
+                        ScrollView {
+                                   LazyVStack(spacing: 10) {
+                                       
+                                       ForEach(0..<listaTemp.count, id:\.self) { recolectorItem in
+                                           SectionView(recolector: listaTemp[recolectorItem].nombreR, isExpanded: $sectionStates[recolectorItem],recolectoritem: recolectorItem)
+                                       }
+                                       
+                                       
                                    }
-                                   
-                                   
-                               }
+                        }.onAppear(){
+                            reader.scrollTo(0)
+                        }
                     }
+                   
                     
                     
                     
@@ -65,16 +72,18 @@ struct VistaListaConjunto: View {
                 
             }.onAppear(){
                 
-                
+                //No tocar :)
                 if let listaTicketsManagers2 = listaTicketsManagers2 {
-                    print("Prueba lista")
-                    print(datosManager)
                     datosManager = listaTicketsManagers2
+                    
                     listaTemp = listaTicketsManagers2
-                    print(datosManager)
+                    
                     sectionStates = Array(repeating: false, count: listaTicketsManagers2.count)
                     
+                    
+                    
                 }
+                
                 
               
                 
@@ -98,6 +107,7 @@ struct VistaListaConjunto: View {
 struct SectionView: View {
     let recolector: String
     @Binding var isExpanded: Bool
+    let recolectoritem: Int
 
     var body: some View {
         VStack {
@@ -135,16 +145,15 @@ struct SectionView: View {
 
 
             if isExpanded {
-                ForEach(0..<datosManager.count, id: \.self) { recolector in
-                    ForEach(0..<datosManager[recolector].Tickets.count) { ticket in
-                        NavigationLink(destination: VistaTicket(ticket: datosManager[recolector].Tickets[ticket])) {
-                            ListaIndividual(ticket: datosManager[recolector].Tickets[ticket])
+                    ForEach(0..<datosManager[recolectoritem].numTickets) { ticket in
+                        NavigationLink(destination: VistaTicket(ticket: datosManager[recolectoritem].Tickets[ticket])) {
+                            ListaIndividual(ticket: datosManager[recolectoritem].Tickets[ticket])
                         }
+                    
         
                     }
 
 
-                }
                 Rectangle()
                     .fill(Color("ColorAzulVerdePaleta"))
                     .frame(width: 170,height: 7)
