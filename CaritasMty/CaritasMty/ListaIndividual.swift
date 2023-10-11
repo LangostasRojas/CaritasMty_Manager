@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ListaIndividual: View {
-    var colorDeTicket : String = "NoCompletado"
+    var colorDeTicket : String = ""
     var ticket : Ticket
+
+    
     var body: some View {
         ZStack{
             Color("BgColor").ignoresSafeArea()
@@ -32,9 +34,10 @@ struct ListaIndividual: View {
                     
                 }
                 Spacer()
+                
                 Circle()
                     .frame(width: 20.0)
-                    .foregroundColor(Color(colorDeTicket))
+                    .foregroundColor(Color(switchStatus(for:ticket.estatus)))
                     
                     
                 
@@ -47,7 +50,26 @@ struct ListaIndividual: View {
         }
     }
     
+
+    
 }
+private func switchStatus(for status: String) -> String {
+    var colorTicket = ""
+    switch status{
+        case "Sin Empezar":
+            colorTicket = "Pendiente"
+        case "En Ruta":
+            colorTicket = "EnCurso"
+        case "Recolectado":
+            colorTicket = "Completado"
+        case "No recolectado":
+        colorTicket = "Rechazado"
+        default: break
+       
+    }
+        return colorTicket
+}
+
 
 struct JugadorRow_Previews: PreviewProvider {
     static var previews: some View {
