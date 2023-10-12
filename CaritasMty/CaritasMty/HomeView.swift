@@ -14,7 +14,7 @@ struct HomeView: View {
             Home()
                 .tabItem {
                     Label("Inicial", systemImage: "figure.basketball")
-                }
+                } 
             VistaListaConjunto()
                 .tabItem {
                     Label("Cool 😈", systemImage: "basketball.circle")
