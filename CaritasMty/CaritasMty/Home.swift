@@ -32,7 +32,7 @@ struct Home: View {
                         
                         if let usuario = repartidor {
                             
-                            Text("\(usuario.name)")
+                            Text("\(usuario.name) \(usuario.lastName)")
                                 .font(.system(size:37))
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
