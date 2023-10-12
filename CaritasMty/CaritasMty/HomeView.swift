@@ -17,7 +17,7 @@ struct HomeView: View {
                 }.foregroundColor(.white)
             VistaListaConjunto()
                 .tabItem {
-                    Label("Recolectores", systemImage: "list.bullet")
+                    Label("Recolectores", systemImage: "list.bullet").border(Color.white)
                 }
         }.accentColor(.white)
             
