@@ -13,13 +13,14 @@ struct HomeView: View {
         TabView{
             Home()
                 .tabItem {
-                    Label("Inicial", systemImage: "figure.basketball")
-                }
+                    Label("Inicio", systemImage: "house")
+                }.foregroundColor(.white)
             VistaListaConjunto()
                 .tabItem {
-                    Label("Cool 😈", systemImage: "basketball.circle")
+                    Label("Recolectores", systemImage: "list.bullet")
                 }
-        }
+        }.accentColor(.white)
+            
     }
 }
 
