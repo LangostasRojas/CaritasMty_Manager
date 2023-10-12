@@ -15,7 +15,7 @@ struct Login: View {
     @State var password: String = ""
 
     @State var boolalerta: Bool = false
-
+    
     @State var lista: Array<Recolector> = []
     @State var shouldNav: Bool = false
     var body: some View {
@@ -92,28 +92,31 @@ struct Login: View {
                                  
                     
                                  repartidor = user
-                                 print(user)
-                                
-                                 listaTicketsR = callTickets(userID: user.userId, token: user.accessToken)
-                                 
-                                 listaTicketsManagers2 = callRecolectores(userID: user.userId, token: user.accessToken)
-                                 
-                                 if let unwrappedListaTicketsR = listaTicketsR {
-                                     print(unwrappedListaTicketsR)
-                                 } else {
-                                     print("listaTicketsR is nil")
+                                 if user.role != "manager" {
+                                     boolalerta = true
+                                     shouldNav = false
+                                 } else{
+                                     listaTicketsR = callTickets(userID: user.userId, token: user.accessToken)
+                                     
+                                     listaTicketsManagers2 = callRecolectores(userID: user.userId, token: user.accessToken)
+                                     
+                                     if let unwrappedListaTicketsR = listaTicketsR {
+                                         print("Se cargo la listaTicketsR")
+                                     } else {
+                                         print("listaTicketsR is nil")
+                                     }
+                                     
+                                     if let unwrappedListaTicketsManagers2 = listaTicketsManagers2 {
+                                         print("Se cargo la unrwappedListaTicket")
+                                     } else {
+                                         print("unwrappedListaTicketsManagers2 is nil")
+                                     }
+                                     
+                                     shouldNav = true
                                  }
                                  
-                                 if let unwrappedListaTicketsManagers2 = listaTicketsManagers2 {
-                                     print(unwrappedListaTicketsManagers2)
-                                 } else {
-                                     print("unwrappedListaTicketsManagers2 is nil")
-                                 }
-                                 
-                                 shouldNav = true
                              } else if let error = error {
 
-                                 print(error)
                                  boolalerta = true
                                  shouldNav = false
                              }
