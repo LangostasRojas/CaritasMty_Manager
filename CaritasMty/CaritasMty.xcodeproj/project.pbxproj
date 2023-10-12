@@ -7,18 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB02D7BA2AA79552002956F4 /* BotonUni.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB02D7B92AA79552002956F4 /* BotonUni.swift */; };
+		FB2E70532AC4C76B00C6C424 /* ListaIndividual.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2E70522AC4C76B00C6C424 /* ListaIndividual.swift */; };
+		FB2E70552AC4CD6000C6C424 /* VistaListaConjunto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2E70542AC4CD6000C6C424 /* VistaListaConjunto.swift */; };
+		FB2E70572AC4CDED00C6C424 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2E70562AC4CDED00C6C424 /* Ticket.swift */; };
+		FB2E70592AC4CE0200C6C424 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2E70582AC4CE0200C6C424 /* ModelData.swift */; };
+		FB2E705B2AC4CE9500C6C424 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2E705A2AC4CE9500C6C424 /* GlobalVariables.swift */; };
+		FB4C0CF22AD74914000731F4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C0CF12AD74914000731F4 /* Home.swift */; };
+		FB5A52D92AC4D8AD0065ED04 /* GetTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A52D82AC4D8AD0065ED04 /* GetTicket.swift */; };
+		FB96A3052AD7608100742DC8 /* DashboardManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A3042AD7608100742DC8 /* DashboardManagerView.swift */; };
 		FB9E54652AA157EA00FB7644 /* CaritasMtyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9E54642AA157EA00FB7644 /* CaritasMtyApp.swift */; };
 		FB9E54672AA157EA00FB7644 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9E54662AA157EA00FB7644 /* ContentView.swift */; };
 		FB9E54692AA157EA00FB7644 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9E54682AA157EA00FB7644 /* Assets.xcassets */; };
 		FB9E546C2AA157EA00FB7644 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9E546B2AA157EA00FB7644 /* Preview Assets.xcassets */; };
+		FB9EF7FB2AA69B1700E1849F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9EF7FA2AA69B1700E1849F /* HomeView.swift */; };
+		FBA032D62AA68ADE002B7D72 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA032D52AA68ADE002B7D72 /* Data.swift */; };
+		FBB0DD412AA67281003DE6A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0DD402AA67281003DE6A8 /* User.swift */; };
+		FBB0DD432AA67518003DE6A8 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0DD422AA67518003DE6A8 /* Login.swift */; };
+		FBD80E092AC4E708001535A3 /* GetRecolectores.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD80E082AC4E708001535A3 /* GetRecolectores.swift */; };
+		FBD80E0B2AC4E822001535A3 /* Recolector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD80E0A2AC4E822001535A3 /* Recolector.swift */; };
+		FBFD244C2AA8D29F00C81625 /* VistasDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFD244B2AA8D29F00C81625 /* VistasDetailed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB02D7B92AA79552002956F4 /* BotonUni.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotonUni.swift; sourceTree = "<group>"; };
+		FB2E70522AC4C76B00C6C424 /* ListaIndividual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaIndividual.swift; sourceTree = "<group>"; };
+		FB2E70542AC4CD6000C6C424 /* VistaListaConjunto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaListaConjunto.swift; sourceTree = "<group>"; };
+		FB2E70562AC4CDED00C6C424 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		FB2E70582AC4CE0200C6C424 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		FB2E705A2AC4CE9500C6C424 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		FB4C0CF12AD74914000731F4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		FB5A52D82AC4D8AD0065ED04 /* GetTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicket.swift; sourceTree = "<group>"; };
+		FB96A3042AD7608100742DC8 /* DashboardManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardManagerView.swift; sourceTree = "<group>"; };
 		FB9E54612AA157EA00FB7644 /* CaritasMty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaritasMty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9E54642AA157EA00FB7644 /* CaritasMtyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaritasMtyApp.swift; sourceTree = "<group>"; };
 		FB9E54662AA157EA00FB7644 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FB9E54682AA157EA00FB7644 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB9E546B2AA157EA00FB7644 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FB9EF7FA2AA69B1700E1849F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FBA032D52AA68ADE002B7D72 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		FBB0DD402AA67281003DE6A8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FBB0DD422AA67518003DE6A8 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		FBD80E082AC4E708001535A3 /* GetRecolectores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecolectores.swift; sourceTree = "<group>"; };
+		FBD80E0A2AC4E822001535A3 /* Recolector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recolector.swift; sourceTree = "<group>"; };
+		FBFD244B2AA8D29F00C81625 /* VistasDetailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistasDetailed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +67,9 @@
 		FB9E54582AA157EA00FB7644 = {
 			isa = PBXGroup;
 			children = (
+				FB5A52D82AC4D8AD0065ED04 /* GetTicket.swift */,
+				FBD80E082AC4E708001535A3 /* GetRecolectores.swift */,
+				FB2E705A2AC4CE9500C6C424 /* GlobalVariables.swift */,
 				FB9E54632AA157EA00FB7644 /* CaritasMty */,
 				FB9E54622AA157EA00FB7644 /* Products */,
 			);
@@ -53,6 +88,19 @@
 			children = (
 				FB9E54642AA157EA00FB7644 /* CaritasMtyApp.swift */,
 				FB9E54662AA157EA00FB7644 /* ContentView.swift */,
+				FBB0DD422AA67518003DE6A8 /* Login.swift */,
+				FB96A3042AD7608100742DC8 /* DashboardManagerView.swift */,
+				FB02D7B92AA79552002956F4 /* BotonUni.swift */,
+				FB9EF7FA2AA69B1700E1849F /* HomeView.swift */,
+				FB4C0CF12AD74914000731F4 /* Home.swift */,
+				FB2E70542AC4CD6000C6C424 /* VistaListaConjunto.swift */,
+				FB2E70522AC4C76B00C6C424 /* ListaIndividual.swift */,
+				FBA032D52AA68ADE002B7D72 /* Data.swift */,
+				FBB0DD402AA67281003DE6A8 /* User.swift */,
+				FBFD244B2AA8D29F00C81625 /* VistasDetailed.swift */,
+				FB2E70562AC4CDED00C6C424 /* Ticket.swift */,
+				FBD80E0A2AC4E822001535A3 /* Recolector.swift */,
+				FB2E70582AC4CE0200C6C424 /* ModelData.swift */,
 				FB9E54682AA157EA00FB7644 /* Assets.xcassets */,
 				FB9E546A2AA157EA00FB7644 /* Preview Content */,
 			);
@@ -137,8 +185,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB2E70572AC4CDED00C6C424 /* Ticket.swift in Sources */,
 				FB9E54672AA157EA00FB7644 /* ContentView.swift in Sources */,
+				FB02D7BA2AA79552002956F4 /* BotonUni.swift in Sources */,
+				FBA032D62AA68ADE002B7D72 /* Data.swift in Sources */,
+				FB2E705B2AC4CE9500C6C424 /* GlobalVariables.swift in Sources */,
 				FB9E54652AA157EA00FB7644 /* CaritasMtyApp.swift in Sources */,
+				FB4C0CF22AD74914000731F4 /* Home.swift in Sources */,
+				FB2E70592AC4CE0200C6C424 /* ModelData.swift in Sources */,
+				FB96A3052AD7608100742DC8 /* DashboardManagerView.swift in Sources */,
+				FB9EF7FB2AA69B1700E1849F /* HomeView.swift in Sources */,
+				FB2E70532AC4C76B00C6C424 /* ListaIndividual.swift in Sources */,
+				FBFD244C2AA8D29F00C81625 /* VistasDetailed.swift in Sources */,
+				FBB0DD432AA67518003DE6A8 /* Login.swift in Sources */,
+				FBD80E092AC4E708001535A3 /* GetRecolectores.swift in Sources */,
+				FBB0DD412AA67281003DE6A8 /* User.swift in Sources */,
+				FBD80E0B2AC4E822001535A3 /* Recolector.swift in Sources */,
+				FB5A52D92AC4D8AD0065ED04 /* GetTicket.swift in Sources */,
+				FB2E70552AC4CD6000C6C424 /* VistaListaConjunto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
