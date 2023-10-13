@@ -12,21 +12,7 @@ struct Reporte: View {
     
     var body: some View {
         VStack{
-            Table(lista) {
-                TableColumn("Recibo") {recibo in
-                    Text("\(recibo.id)")
-                }
-                TableColumn("Donante") {recibo2 in
-                    Text("\(recibo2.donante)")
-                 }
-                TableColumn("Cantidad") {recibo in
-                    Text("\(recibo.cantidad)")
-                 }
-                TableColumn("Cobrado") {recibo in
-                    Text(recibo.cobrado ? "Si" : "No")
-                 }
-                TableColumn("OBSERVACIONES", value: \.observaciones)
-            }
+            Text("Aqui va algo estilo card como ticket que enseña información del recibo y se hace click para detalle que tiene toda la info.")
         }.onAppear(){
             lista = getReporte(token: repartidor?.accessToken ?? "")
             print(lista)
