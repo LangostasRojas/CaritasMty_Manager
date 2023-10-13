@@ -28,7 +28,11 @@ struct VistaDetailed: View {
         
             Color("BgColor")
                 .ignoresSafeArea()
+            
             VStack{
+            
+                
+                
                 HStack{ 
                     Text("Ticket - \(ticket.id)")
                         .foregroundColor(.white)
@@ -68,13 +72,16 @@ struct VistaDetailed: View {
                                 .padding(.bottom,5.0)
                                 .fontWeight(.bold)
                             Text(ticket.direccion)
-                            Text("$ \(String(format: "%.2f", ticket.importe))").bold()
-                                .font(.system(size: 36))
-                                .padding(.vertical,5)
+                           
                         }
                         .font(.system(size: 20))
                         .padding(.horizontal,20.00)
-                        
+                        Text("$ \(String(format: "%.2f", ticket.importe))").bold()
+                            .font(.system(size: 36))
+                            .padding(.vertical,5.0)
+                        if(ticket.estatus == "Recolectado"){
+                            HStack{}.padding(.bottom, 200.0)}
+                            
                         if(ticket.estatus == "No recolectado"){
                             
                             Text("No recolectado")
@@ -156,9 +163,11 @@ struct VistaDetailed: View {
             }
         }
         .onAppear(){
+            
             if let usuario = repartidor {
                 listCollectorOption = getRecolectorOptions(token: usuario.accessToken)
             }
+            
         }
     }
 }

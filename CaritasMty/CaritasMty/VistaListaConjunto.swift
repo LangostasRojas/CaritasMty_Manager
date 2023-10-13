@@ -64,6 +64,13 @@ struct VistaListaConjunto: View {
                 
             }.onAppear(){
                 
+                if let repartidor = repartidor {
+                    
+                    listaTicketsManagers2 = callRecolectores(userID: repartidor.userId, token: repartidor.accessToken)
+                    
+                }
+                
+                
                 //No tocar :)
                 if let listaTicketsManagers2 = listaTicketsManagers2 {
                     datosManager = listaTicketsManagers2
