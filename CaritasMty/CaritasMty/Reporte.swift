@@ -11,14 +11,38 @@ struct Reporte: View {
     @State var lista: Array<Recibo> = []
     
     var body: some View {
-        VStack{
-            Text("Aqui va algo estilo card como ticket que enseña información del recibo y se hace click para detalle que tiene toda la info.")
-        }.onAppear(){
-            lista = getReporte(token: repartidor?.accessToken ?? "")
-            print(lista)
+        ZStack{
+            Color("BgColor").ignoresSafeArea()
+            VStack{
+                HStack{
+                    Text("Reporte")
+                        .foregroundColor(.white)
+                        .font(.system(size: 40))
+                        .fontWeight(.bold)
+                        .padding(.leading, 40.0)
+                    Spacer()
+                }.padding(.top, 20.0)
+                Rectangle()
+                    .fill(Color("ColorAzulVerdePaleta"))
+                    .frame(width: 170,height: 7)
+                    .cornerRadius(20)
+                    .offset(x:-70,y:-25)
+                ScrollView{
+                    LazyVStack(spacing: 10){
+                            ForEach(lista) { reciboItem in
+                                    ReciboIndividual(recibo: reciboItem)
+                            }
+                                .buttonStyle(.plain)
+                                .padding(0)
+                        }
+                        }
+
+            }.onAppear(){
+                lista = getReporte(token: repartidor?.accessToken ?? "")
             }
         }
     }
+}
 
 
 

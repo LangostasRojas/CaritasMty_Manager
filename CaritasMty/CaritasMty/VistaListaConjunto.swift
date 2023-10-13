@@ -15,8 +15,6 @@ struct VistaListaConjunto: View {
     @State var sectionStates: [Bool] = []
     //@State var ReloadScroll: Bool =
 
-    
-    
         var body: some View {
         NavigationStack{
             ZStack{

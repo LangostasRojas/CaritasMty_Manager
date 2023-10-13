@@ -74,7 +74,6 @@ struct VistaTicket: View {
                         completeTicket(ticketID: ticket.id, token: repartidor.accessToken) { success in
                             
                             if(success){
-                                print("EXITOOO!")
                                 
                                 if let listat = listaTicketsR{
                                     
@@ -84,7 +83,6 @@ struct VistaTicket: View {
                                 
                             }else{
                                 
-                                print("SUPER F no jalo")
                                 
                             }
                             

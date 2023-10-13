@@ -28,6 +28,7 @@
 		FBE38DA32AD8C1AB007440AA /* Reporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE38DA22AD8C1AB007440AA /* Reporte.swift */; };
 		FBE38DA52AD8C46F007440AA /* Recibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE38DA42AD8C46F007440AA /* Recibo.swift */; };
 		FBE38DA72AD8CBEA007440AA /* GetReporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE38DA62AD8CBEA007440AA /* GetReporte.swift */; };
+		FBEB88722AD9D00600B840A8 /* ReciboIndividual.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEB88712AD9D00600B840A8 /* ReciboIndividual.swift */; };
 		FBFD244C2AA8D29F00C81625 /* VistasDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFD244B2AA8D29F00C81625 /* VistasDetailed.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		FBE38DA22AD8C1AB007440AA /* Reporte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reporte.swift; sourceTree = "<group>"; };
 		FBE38DA42AD8C46F007440AA /* Recibo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recibo.swift; sourceTree = "<group>"; };
 		FBE38DA62AD8CBEA007440AA /* GetReporte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReporte.swift; sourceTree = "<group>"; };
+		FBEB88712AD9D00600B840A8 /* ReciboIndividual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciboIndividual.swift; sourceTree = "<group>"; };
 		FBFD244B2AA8D29F00C81625 /* VistasDetailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistasDetailed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 				FBE38DA42AD8C46F007440AA /* Recibo.swift */,
 				FB2E70582AC4CE0200C6C424 /* ModelData.swift */,
 				FBE38DA22AD8C1AB007440AA /* Reporte.swift */,
+				FBEB88712AD9D00600B840A8 /* ReciboIndividual.swift */,
 				FB9E54682AA157EA00FB7644 /* Assets.xcassets */,
 				FB9E546A2AA157EA00FB7644 /* Preview Content */,
 			);
@@ -195,6 +198,7 @@
 				FB9E54672AA157EA00FB7644 /* ContentView.swift in Sources */,
 				FB02D7BA2AA79552002956F4 /* BotonUni.swift in Sources */,
 				FBA032D62AA68ADE002B7D72 /* Data.swift in Sources */,
+				FBEB88722AD9D00600B840A8 /* ReciboIndividual.swift in Sources */,
 				FB2E705B2AC4CE9500C6C424 /* GlobalVariables.swift in Sources */,
 				FBE38DA32AD8C1AB007440AA /* Reporte.swift in Sources */,
 				FB9E54652AA157EA00FB7644 /* CaritasMtyApp.swift in Sources */,

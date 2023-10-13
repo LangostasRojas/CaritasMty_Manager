@@ -100,13 +100,12 @@ struct Login: View {
                                      listaTicketsManagers2 = callRecolectores(userID: user.userId, token: user.accessToken)
                                      
                                      if let unwrappedListaTicketsR = listaTicketsR {
-                                         print("Se cargo la listaTicketsR")
+                                         
                                      } else {
                                          print("listaTicketsR is nil")
                                      }
                                      
                                      if let unwrappedListaTicketsManagers2 = listaTicketsManagers2 {
-                                         print("Se cargo la unrwappedListaTicket")
                                      } else {
                                          print("unwrappedListaTicketsManagers2 is nil")
                                      }
