@@ -90,7 +90,6 @@ struct Login: View {
                              (user, error) in
                              if let user = user {
                                  
-                    
                                  repartidor = user
                                  if user.role != "manager" {
                                      boolalerta = true
