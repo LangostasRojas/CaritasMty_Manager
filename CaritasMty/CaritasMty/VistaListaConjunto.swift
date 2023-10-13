@@ -15,8 +15,6 @@ struct VistaListaConjunto: View {
     @State var sectionStates: [Bool] = []
     //@State var ReloadScroll: Bool =
 
-    
-    
         var body: some View {
         NavigationStack{
             ZStack{
@@ -40,22 +38,18 @@ struct VistaListaConjunto: View {
                         .offset(x:-34,y:-25)
                     ScrollViewReader { reader in
                         ScrollView {
-                                   LazyVStack(spacing: 10) {
-                                       
-                                       ForEach(0..<listaTemp.count, id:\.self) { recolectorItem in
-                                           SectionView(recolector: listaTemp[recolectorItem].nombreR, isExpanded: $sectionStates[recolectorItem],recolectoritem: recolectorItem)
-                                       }
-                                       
-                                       
-                                   }
+                           LazyVStack(spacing: 10) {
+                               
+                               ForEach(0..<listaTemp.count, id:\.self) { recolectorItem in
+                                   SectionView(recolector: listaTemp[recolectorItem].nombreR, isExpanded: $sectionStates[recolectorItem],recolectoritem: recolectorItem)
+                               }
+                               
+                               
+                           }
                         }.onAppear(){
                             reader.scrollTo(0)
                         }
                     }
-                   
-                    
-                    
-                    
                     //                    List(listaTickets){ ticketItem in
                     //                        NavigationLink(destination:VistaTicket(ticket: ticketItem) ){
                     //                            TicketRow(ticket: ticketItem)
@@ -66,8 +60,6 @@ struct VistaListaConjunto: View {
                     //                        .listStyle(.plain)
                     //                        .listRowSeparator(.hidden)
                     //                        .padding(0)
-                    
-                    
                 }
                 
             }.onAppear(){
@@ -75,21 +67,13 @@ struct VistaListaConjunto: View {
                 //No tocar :)
                 if let listaTicketsManagers2 = listaTicketsManagers2 {
                     datosManager = listaTicketsManagers2
-                    
                     listaTemp = listaTicketsManagers2
-                    
                     sectionStates = Array(repeating: false, count: listaTicketsManagers2.count)
-                    
-                    
-                    
+
                 }
                 
                 
-              
-                
-              
-                
-                
+      
                 
             }
             
@@ -146,7 +130,7 @@ struct SectionView: View {
 
             if isExpanded {
                     ForEach(0..<datosManager[recolectoritem].numTickets) { ticket in
-                        NavigationLink(destination: VistaTicket(ticket: datosManager[recolectoritem].Tickets[ticket])) {
+                        NavigationLink(destination: VistaDetailed(ticket: datosManager[recolectoritem].Tickets[ticket], showCollectors: false, selectedCollector: 3)) {
                             ListaIndividual(ticket: datosManager[recolectoritem].Tickets[ticket])
                         }
                     
