@@ -31,11 +31,12 @@ struct DashboardManagerView: View {
                     .offset(x:-64,y:-25)
                 HStack{
                    Rectangle()
-                        .frame(width: 175,height: 150)
+                        .frame(width: 200,height: 150)
                         .cornerRadius(20)
-                        .foregroundColor(Color("ColorDash"))
+                        .foregroundColor(.yellow)
+                        .padding(.trailing,10)
                     Rectangle()
-                         .frame(width: 175,height: 150)
+                         .frame(width: 150,height: 150)
                          .cornerRadius(20)
                          .foregroundColor(Color("ColorDash"))
                 }
@@ -50,11 +51,7 @@ struct DashboardManagerView: View {
                          .cornerRadius(20)
                          .foregroundColor(Color("ColorDash"))
                 }
-                Rectangle()
-                    .frame(width: 350, height: 250)
-                    .cornerRadius(30)
-                    .padding(.top,20)
-                    .foregroundColor(Color("ColorDash"))
+                ChartPorMunicipio()
                 
             }
         }

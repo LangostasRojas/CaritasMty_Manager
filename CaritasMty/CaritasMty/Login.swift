@@ -100,6 +100,9 @@ struct Login: View {
                                      
                                      listaTicketsManagers2 = callRecolectores(userID: user.userId, token: user.accessToken)
                                      
+                                     IngresosPorMunicpio = getIncomeZona(userID: user.userId, token: user.accessToken)
+                                     
+                                     
                                      if let unwrappedListaTicketsR = listaTicketsR {
                                          print("Se cargo la listaTicketsR")
                                      } else {
@@ -111,6 +114,13 @@ struct Login: View {
                                      } else {
                                          print("unwrappedListaTicketsManagers2 is nil")
                                      }
+                                     if let unwrappedListaIncomezONA = IngresosPorMunicpio {
+                                         print("Se cargo la Municipios")
+                                         print("\(unwrappedListaIncomezONA)")
+                                     } else {
+                                         print("Se cargo la lista muni")
+                                     }
+                                     
                                      
                                      shouldNav = true
                                  }

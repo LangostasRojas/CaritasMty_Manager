@@ -41,6 +41,72 @@ func callTickets(userID: Int,token: String) -> [Ticket] {
     return lista
 }
 
+func getIncomeZona(userID: Int,token: String) -> [MunicipiosDonaciones] {
+    
+    var lista: [MunicipiosDonaciones] = []
+    
+    var request = URLRequest(url: URL(string: "http://10.14.255.66:10206/get-zone-donations")!, timeoutInterval: Double.infinity)
+    request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+    request.httpMethod = "GET"
+
+    let group = DispatchGroup()
+    group.enter()
+
+    let task = URLSession.shared.dataTask(with: request) { data, _, error in
+        let jsonDecoder = JSONDecoder()
+
+        if let data = data {
+            do {
+                let ticketList = try jsonDecoder.decode([MunicipiosDonaciones].self, from: data)
+                lista = ticketList
+            } catch {
+                print(error)
+            }
+        }
+
+        group.leave()
+    }
+
+    task.resume()
+    group.wait()
+    print(lista)
+    return lista
+}
+
+
+func getAvarageTickets(userID: Int,token: String) -> [CompletionRate] {
+    
+    var lista: [CompletionRate] = []
+    
+    var request = URLRequest(url: URL(string: "http://10.14.255.66:10206/get-average-tickets")!, timeoutInterval: Double.infinity)
+    request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+    request.httpMethod = "GET"
+
+    let group = DispatchGroup()
+    group.enter()
+
+    let task = URLSession.shared.dataTask(with: request) { data, _, error in
+        let jsonDecoder = JSONDecoder()
+
+        if let data = data {
+            do {
+                let ticketList = try jsonDecoder.decode([CompletionRate].self, from: data)
+                lista = ticketList
+            } catch {
+                print(error)
+            }
+        }
+
+        group.leave()
+    }
+
+    task.resume()
+    group.wait()
+    print(lista)
+    return lista
+}
 
 func completeTicket(ticketID: Int, token: String, completion: @escaping (Bool) -> Void) {
     var choice = true

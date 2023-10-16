@@ -10,3 +10,4 @@ import Foundation
 var repartidor: User?
 var listaTicketsR: Array<Ticket>?
 var listaTicketsManagers2: Array<Recolector>?
+var IngresosPorMunicpio: Array<MunicipiosDonaciones>?
