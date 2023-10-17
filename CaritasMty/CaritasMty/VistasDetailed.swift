@@ -13,10 +13,14 @@
 //
 
 import SwiftUI
+import CoreLocation
+import CoreLocationUI
+import MapKit
 
 struct VistaTicket: View {
     var ticket : Ticket
-
+    @State var localEnd: Location
+    @State private var cargodatos: Bool = false
     var body: some View {
         
         ZStack{
@@ -38,12 +42,27 @@ struct VistaTicket: View {
                     .fill(Color("ColorAzulVerdePaleta"))
                     .frame(width: 170,height: 7)
                     .cornerRadius(20)
-                    .offset(x:-64,y:-25)
+                    .offset(x:-64,y:-25).onAppear(){
+                        if let repartidor = repartidor{
+                            localEnd = callLocation(ticketID: ticket.id, token: repartidor.accessToken)
+                            print("Se cargaron los datos de lcoalizacion")
+                            cargodatos = true
+                        } else {
+                            cargodatos = true
+                        }
+                    }
                 
-                Image("Mapa")
-                    .resizable(resizingMode: .stretch)
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 250)
+//                Image("Mapa")
+//                    .resizable(resizingMode: .stretch)
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(width: 250)
+                if(cargodatos){
+                    MiniMapView(coordinatesend: CLLocationCoordinate2D(latitude: localEnd.lat, longitude: localEnd.lng), region: MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: localEnd.lat, longitude: localEnd.lng), latitudinalMeters: 2000, longitudinalMeters: 2000)).frame(height: 200).padding(.horizontal, 20).cornerRadius(10)
+                }else{
+                    ProgressView()
+                }
+                
+                
 
                     VStack{
                         Group{
@@ -130,7 +149,7 @@ func removeItem(arreglo: Array<Ticket>, ticket: Ticket) -> Int{
 struct VistaTicket_Previews: PreviewProvider {
     static var previews: some View {
         
-        VistaTicket(ticket: listaTickets[0])
+        VistaTicket(ticket: listaTickets[0], localEnd: Location(lat: 0.0, lng: 0.0))
     }
 }
 

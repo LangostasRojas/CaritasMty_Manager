@@ -146,8 +146,9 @@ struct SectionView: View {
 
             if isExpanded {
                     ForEach(0..<datosManager[recolectoritem].numTickets) { ticket in
-                        NavigationLink(destination: VistaTicket(ticket: datosManager[recolectoritem].Tickets[ticket])) {
+                        NavigationLink(destination: VistaTicket(ticket: datosManager[recolectoritem].Tickets[ticket], localEnd: Location(lat: 0.0, lng: 0.0))) {
                             ListaIndividual(ticket: datosManager[recolectoritem].Tickets[ticket])
+                            
                         }
                     
         
