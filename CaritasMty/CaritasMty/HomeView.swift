@@ -8,16 +8,38 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var showingPop = false
+    @Environment(\.presentationMode) var presentationMode
 //    @State var usuario: Array<User> = []
     var body: some View {
         NavigationStack{
             VStack{
                 ZStack{
-                    
+                   
                     Color("BgColor")
                         .ignoresSafeArea()
-                    
+                
                     VStack{
+                        HStack{
+                            Spacer()
+                            Button(action: {
+                                self.showingPop = true
+                            }){
+                                Image(systemName: "rectangle.portrait.and.arrow.forward").font(.system(size: 25)).padding(.trailing, 30.0).foregroundColor(.white).padding(.top,10)
+
+                            }.alert(isPresented: $showingPop) {
+
+                                Alert(title: Text("Cerras sesion"), message: Text("¿Estas seguro de que quieres cerrar sesión?"), primaryButton: .destructive(Text("Si")){
+
+                                    presentationMode.wrappedValue.dismiss()
+
+                                }, secondaryButton: .cancel()
+
+                                )
+
+                            }
+                        }
+
                         Circle()
                             .fill(.gray)
                             .frame(width: 200)

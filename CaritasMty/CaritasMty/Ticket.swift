@@ -14,6 +14,7 @@ struct Ticket: Codable, Identifiable {
     var importe: Float
     var direccion: String
     var estatus: String
+    var estatusPago: Int
 
     enum CodingKeys: String, CodingKey {
         case id = "idTicket"
@@ -21,14 +22,16 @@ struct Ticket: Codable, Identifiable {
         case importe = "importe"
         case direccion = "direccion"
         case estatus = "estatus"
+        case estatusPago = "estatusPago"
     }
 
-    init(id: Int, nombre: String, importe: Float, direccion: String, estatus: String) {
+    init(id: Int, nombre: String, importe: Float, direccion: String, estatus: String, estatusPago: Int) {
         self.id = id
         self.nombre = nombre
         self.importe = importe
         self.direccion = direccion
         self.estatus = estatus
+        self.estatusPago = estatusPago
     }
 }
 
