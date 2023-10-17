@@ -89,21 +89,30 @@ struct HomeView: View {
                                                     .cornerRadius(50)
                                                     .shadow(color:.black,radius: 2,y:2)
                                                     .padding(.bottom,30)
-                        Button(action: {
-                            
-                        }, label: {
-                            Text("Dashboard")
-                                .frame(width: 150)
-                                .font(.title2)
-                                .bold()
-                                .foregroundColor(.white)
-                                .padding(.vertical,15)
-                                .padding(.horizontal,70)
-                                .background(Color("ColorAzulVerdePaleta"))
-                                .cornerRadius(50)
-                                .shadow(color:.black,radius: 2,y:2)
-                        })
-                        .padding(.bottom,30)
+
+NavigationLink("Dashboard",destination: DashboardManagerView())
+.frame(width: 150)
+.font(.title2)
+.bold()
+.foregroundColor(.white)
+.padding(.vertical,15)
+.padding(.horizontal,70)
+.background(Color("ColorAzulVerdePaleta"))
+.cornerRadius(50)
+.shadow(color:.black,radius: 2,y:2)
+.padding(.bottom,30)
+NavigationLink("Reporte",destination: Reporte())
+.frame(width: 150)
+.font(.title2)
+.bold()
+.foregroundColor(.white)
+.padding(.vertical,15)
+.padding(.horizontal,70)
+.background(Color("ColorAzulVerdePaleta"))
+.cornerRadius(50)
+.shadow(color:.black,radius: 2,y:2)
+.padding(.bottom,30)
+
                         
                         
                         
