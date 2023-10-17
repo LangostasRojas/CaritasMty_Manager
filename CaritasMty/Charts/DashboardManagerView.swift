@@ -42,16 +42,8 @@ struct DashboardManagerView: View {
                 }
                 .padding(.bottom,5 )
                 HStack{
-                   Rectangle()
-                        .frame(width: 175,height: 150)
-                        .cornerRadius(20)
-                        .foregroundColor(Color("ColorDash"))
-                    Rectangle()
-                         .frame(width: 175,height: 150)
-                         .cornerRadius(20)
-                         .foregroundColor(Color("ColorDash"))
+                    AvarageTicketsChart()
                 }
-                ChartPorMunicipio()
                 
             }
         }

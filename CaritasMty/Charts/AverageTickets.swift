@@ -7,14 +7,16 @@
 
 
 import Foundation
-struct CompletionRate: Codable, Identifiable{
+struct AverageTickets: Codable, Identifiable{
+    let fecha: String
     let id: Int
     let porcentaje: Int
     let recolectado: Int
     let total: Int
     
-    init(porcentaje: Int, recolectado: Int, total: Int) {
-        self.id = 1
+    init(fecha:String, id: Int, porcentaje: Int, recolectado: Int, total: Int) {
+        self.fecha = fecha
+        self.id = id
         self.porcentaje = porcentaje
         self.recolectado = recolectado
         self.total = total

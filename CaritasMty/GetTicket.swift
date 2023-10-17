@@ -75,9 +75,9 @@ func getIncomeZona(userID: Int,token: String) -> [MunicipiosDonaciones] {
 }
 
 
-func getAvarageTickets(userID: Int,token: String) -> [CompletionRate] {
+func getAvarageTickets(userID: Int,token: String) -> [AverageTickets] {
     
-    var lista: [CompletionRate] = []
+    var lista: [AverageTickets] = []
     
     var request = URLRequest(url: URL(string: "http://10.14.255.66:10206/get-average-tickets")!, timeoutInterval: Double.infinity)
     request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
@@ -92,7 +92,7 @@ func getAvarageTickets(userID: Int,token: String) -> [CompletionRate] {
 
         if let data = data {
             do {
-                let ticketList = try jsonDecoder.decode([CompletionRate].self, from: data)
+                let ticketList = try jsonDecoder.decode([AverageTickets].self, from: data)
                 lista = ticketList
             } catch {
                 print(error)
