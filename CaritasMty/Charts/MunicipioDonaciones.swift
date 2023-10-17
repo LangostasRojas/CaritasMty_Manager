@@ -7,17 +7,15 @@
 
 import Foundation
 struct MunicipiosDonaciones: Codable, Identifiable{
-    let fecha: String
     let id: Int
-    let porcentaje: Int
-    let total: Int
+    let ingresos: Float
+    let municipio: String
     
     
-    init(fecha: String, id: Int, porcentaje: Int, total: Int) {
-        self.fecha = fecha
+    init(id: Int, ingresos: Float,municipio: String) {
         self.id = id
-        self.porcentaje = porcentaje
-        self.total = total
+        self.ingresos = ingresos
+        self.municipio = municipio
     }
 }
 

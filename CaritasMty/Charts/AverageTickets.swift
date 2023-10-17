@@ -1,12 +1,12 @@
 //
-//  CompletionRate.swift
+//  AverageTickets.swift
 //  CaritasMty
 //
-//  Created by Alumno on 13/10/23.
+//  Created by Alumno on 16/10/23.
 //
 
-
 import Foundation
+
 struct AverageTickets: Codable, Identifiable{
     let fecha: String
     let id: Int
@@ -14,7 +14,8 @@ struct AverageTickets: Codable, Identifiable{
     let recolectado: Int
     let total: Int
     
-    init(fecha:String, id: Int, porcentaje: Int, recolectado: Int, total: Int) {
+    
+    init(fecha: String, id: Int,  porcentaje: Int, recolectado:Int,total: Int) {
         self.fecha = fecha
         self.id = id
         self.porcentaje = porcentaje
@@ -22,5 +23,4 @@ struct AverageTickets: Codable, Identifiable{
         self.total = total
     }
 }
-
 

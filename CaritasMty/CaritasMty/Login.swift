@@ -102,8 +102,14 @@ struct Login: View {
                                      
                                      IngresosPorMunicpio = getIncomeZona(userID: user.userId, token: user.accessToken)
                                      AvarageTickets = getAvarageTickets(userID: user.userId, token: user.accessToken)
+                                     expDonations = getExpectedDonations(userID: user.userId, token: user.accessToken)
                                      
                                      if let unwrappedListaTicketsR = listaTicketsR {
+                                         print("Se cargo la listaTicketsR")
+                                     } else {
+                                         print("listaTicketsR is nil")
+                                     }
+                                     if let unwrappedExpectedDonations = expDonations {
                                          print("Se cargo la listaTicketsR")
                                      } else {
                                          print("listaTicketsR is nil")

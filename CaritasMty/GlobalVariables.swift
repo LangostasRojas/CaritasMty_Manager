@@ -12,3 +12,4 @@ var listaTicketsR: Array<Ticket>?
 var listaTicketsManagers2: Array<Recolector>?
 var IngresosPorMunicpio: Array<MunicipiosDonaciones>?
 var AvarageTickets: Array<AverageTickets>?
+var expDonations : ExpectedDonations?

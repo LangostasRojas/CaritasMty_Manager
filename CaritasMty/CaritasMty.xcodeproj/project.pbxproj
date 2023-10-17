@@ -14,7 +14,8 @@
 		FB2E70592AC4CE0200C6C424 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2E70582AC4CE0200C6C424 /* ModelData.swift */; };
 		FB2E705B2AC4CE9500C6C424 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2E705A2AC4CE9500C6C424 /* GlobalVariables.swift */; };
 		FB5A52D92AC4D8AD0065ED04 /* GetTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A52D82AC4D8AD0065ED04 /* GetTicket.swift */; };
-		FB9648912ADE18ED004852EF /* AverageTickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9648902ADE18ED004852EF /* AverageTickets.swift */; };
+		FB9648932ADE1A0D004852EF /* AverageTickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9648922ADE1A0D004852EF /* AverageTickets.swift */; };
+		FB9648952ADE1E02004852EF /* ExpectedDonations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9648942ADE1E02004852EF /* ExpectedDonations.swift */; };
 		FB96A3052AD7608100742DC8 /* DashboardManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A3042AD7608100742DC8 /* DashboardManagerView.swift */; };
 		FB9E54652AA157EA00FB7644 /* CaritasMtyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9E54642AA157EA00FB7644 /* CaritasMtyApp.swift */; };
 		FB9E54672AA157EA00FB7644 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9E54662AA157EA00FB7644 /* ContentView.swift */; };
@@ -43,7 +44,8 @@
 		FB2E70582AC4CE0200C6C424 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		FB2E705A2AC4CE9500C6C424 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		FB5A52D82AC4D8AD0065ED04 /* GetTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicket.swift; sourceTree = "<group>"; };
-		FB9648902ADE18ED004852EF /* AverageTickets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageTickets.swift; sourceTree = "<group>"; };
+		FB9648922ADE1A0D004852EF /* AverageTickets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageTickets.swift; sourceTree = "<group>"; };
+		FB9648942ADE1E02004852EF /* ExpectedDonations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedDonations.swift; sourceTree = "<group>"; };
 		FB96A3042AD7608100742DC8 /* DashboardManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardManagerView.swift; sourceTree = "<group>"; };
 		FB9E54612AA157EA00FB7644 /* CaritasMty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaritasMty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9E54642AA157EA00FB7644 /* CaritasMtyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaritasMtyApp.swift; sourceTree = "<group>"; };
@@ -79,7 +81,6 @@
 		FB9E54582AA157EA00FB7644 = {
 			isa = PBXGroup;
 			children = (
-				FB9648902ADE18ED004852EF /* AverageTickets.swift */,
 				FBAE47C72ADE071D00A0E82B /* Charts */,
 				FB5A52D82AC4D8AD0065ED04 /* GetTicket.swift */,
 				FB9F5BED2ADE14460016FA34 /* GetLocation.swift */,
@@ -134,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				FBE0F86C2AD8C899001859CE /* MunicipioDonaciones.swift */,
+				FB9648922ADE1A0D004852EF /* AverageTickets.swift */,
+				FB9648942ADE1E02004852EF /* ExpectedDonations.swift */,
 				FBB2ECA52ADE00B7005C6BDD /* AvarageTicketsChart.swift */,
 				FBAB56D92AD8C4D500C7D3B5 /* ChartPorMunicipio.swift */,
 				FB96A3042AD7608100742DC8 /* DashboardManagerView.swift */,
@@ -220,7 +223,7 @@
 				FB2E705B2AC4CE9500C6C424 /* GlobalVariables.swift in Sources */,
 				FB9E54652AA157EA00FB7644 /* CaritasMtyApp.swift in Sources */,
 				FB2E70592AC4CE0200C6C424 /* ModelData.swift in Sources */,
-				FB9648912ADE18ED004852EF /* AverageTickets.swift in Sources */,
+				FB9648932ADE1A0D004852EF /* AverageTickets.swift in Sources */,
 				FBB2ECA62ADE00B7005C6BDD /* AvarageTicketsChart.swift in Sources */,
 				FB96A3052AD7608100742DC8 /* DashboardManagerView.swift in Sources */,
 				FB9EF7FB2AA69B1700E1849F /* HomeView.swift in Sources */,
@@ -229,6 +232,7 @@
 				FBFD244C2AA8D29F00C81625 /* VistasDetailed.swift in Sources */,
 				FBB0DD432AA67518003DE6A8 /* Login.swift in Sources */,
 				FBD80E092AC4E708001535A3 /* GetRecolectores.swift in Sources */,
+				FB9648952ADE1E02004852EF /* ExpectedDonations.swift in Sources */,
 				FB9F5BEE2ADE14460016FA34 /* GetLocation.swift in Sources */,
 				FBB0DD412AA67281003DE6A8 /* User.swift in Sources */,
 				FBAB56DA2AD8C4D500C7D3B5 /* ChartPorMunicipio.swift in Sources */,
