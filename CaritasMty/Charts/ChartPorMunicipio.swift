@@ -10,7 +10,7 @@ import Charts
 
 
 struct ChartPorMunicipio: View {
-     var Ingresos: [MunicipiosDonaciones] = []
+    var Ingresos: [MunicipiosDonaciones] = []
     var body: some View {
         Chart(IngresosPorMunicpio!) {
                 BarMark(
@@ -22,7 +22,7 @@ struct ChartPorMunicipio: View {
                 
             }
         }
-        .frame(width: 300,height: 200)
+        .frame(width: 500,height: 500)
         .foregroundColor(Color("ColorAzulVerdePaleta"))
         .background(.black)
         .cornerRadius(20)

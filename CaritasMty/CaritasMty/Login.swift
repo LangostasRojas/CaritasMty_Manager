@@ -101,9 +101,14 @@ struct Login: View {
                                      listaTicketsManagers2 = callRecolectores(userID: user.userId, token: user.accessToken)
                                      
                                      IngresosPorMunicpio = getIncomeZona(userID: user.userId, token: user.accessToken)
-                                     
+                                     AvarageTickets = getAvarageTickets(userID: user.userId, token: user.accessToken)
                                      
                                      if let unwrappedListaTicketsR = listaTicketsR {
+                                         print("Se cargo la listaTicketsR")
+                                     } else {
+                                         print("listaTicketsR is nil")
+                                     }
+                                     if let unwrappedListaTicketsAverage = AvarageTickets {
                                          print("Se cargo la listaTicketsR")
                                      } else {
                                          print("listaTicketsR is nil")
