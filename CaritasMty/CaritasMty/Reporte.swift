@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Reporte: View {
     @State var lista: Array<Recibo> = []
+    @State private var selectedFliter: Int = 1
     
     var body: some View {
         ZStack{
@@ -27,15 +28,43 @@ struct Reporte: View {
                     .frame(width: 170,height: 7)
                     .cornerRadius(20)
                     .offset(x:-70,y:-25)
+                Picker(selection: $selectedFliter, label:Text("Picker")){
+                    Text("Todos").tag(1)
+                    Text("Recolectados").tag(2)
+                    Text("Pendientes").tag(3)
+                }.pickerStyle(.segmented).padding([.leading, .bottom, .trailing], 8.0)//.colorMultiply(Color("ColorAzulVerdePaleta"))
+                    
                 ScrollView{
                     LazyVStack(spacing: 10){
+                        if (selectedFliter == 1){
                             ForEach(lista) { reciboItem in
-                                    ReciboIndividual(recibo: reciboItem)
+                                ReciboIndividual(recibo: reciboItem)
                             }
-                                .buttonStyle(.plain)
-                                .padding(0)
+                            .buttonStyle(.plain)
+                            .padding(0)
                         }
+                        else if (selectedFliter == 2){
+                            ForEach(lista) { reciboItem in
+                                if (reciboItem.cobrado){
+                                    ReciboIndividual(recibo: reciboItem)
+                                }
+                            }
+                            .buttonStyle(.plain)
+                            .padding(0)
                         }
+                        else {
+                            ForEach(lista) { reciboItem in
+                                if (!reciboItem.cobrado){
+                                    ReciboIndividual(recibo: reciboItem)
+                                }
+                            }
+                            .buttonStyle(.plain)
+                            .padding(0)
+                        }
+                    }
+                }.refreshable {
+                    lista = getReporte(token: repartidor?.accessToken ?? "")
+                }
 
             }.onAppear(){
                 lista = getReporte(token: repartidor?.accessToken ?? "")
