@@ -48,15 +48,7 @@ struct Login: View {
                         
                         Spacer().frame(height: 50)
                         
-                        //                    TextField("Ingresa tu password", text: $password, prompt: Text("Ingresa tu contraseña").foregroundColor(.white))
-                        //                        .padding()
-                        //                        .frame(width: 350, height: 55)
-                        //                        .background(.clear)
-                        //                        .tint(.white)
-                        //                        .foregroundColor(.white)
-                        //                        .cornerRadius(15)
-                        //                        .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color("ColorAzulVerdePaleta"), lineWidth: 3))
-                        //                        .autocorrectionDisabled(true)
+                      
                         
                         SecureField("Ingresa tu password", text: $password, prompt: Text("Ingresa tu contraseña").foregroundColor(.white))
                             .padding()
@@ -100,7 +92,21 @@ struct Login: View {
                                      
                                      listaTicketsManagers2 = callRecolectores(userID: user.userId, token: user.accessToken)
                                      
+                                     IngresosPorMunicpio = getIncomeZona(userID: user.userId, token: user.accessToken)
+                                     AvarageTickets = getAvarageTickets(userID: user.userId, token: user.accessToken)
+                                     expDonations = getExpectedDonations(userID: user.userId, token: user.accessToken)
+                                     
                                      if let unwrappedListaTicketsR = listaTicketsR {
+                                         print("Se cargo la listaTicketsR")
+                                     } else {
+                                         print("listaTicketsR is nil")
+                                     }
+                                     if let unwrappedExpectedDonations = expDonations {
+                                         print("Se cargo la listaTicketsR")
+                                     } else {
+                                         print("listaTicketsR is nil")
+                                     }
+                                     if let unwrappedListaTicketsAverage = AvarageTickets {
                                          print("Se cargo la listaTicketsR")
                                      } else {
                                          print("listaTicketsR is nil")
@@ -111,6 +117,13 @@ struct Login: View {
                                      } else {
                                          print("unwrappedListaTicketsManagers2 is nil")
                                      }
+                                     if let unwrappedListaIncomezONA = IngresosPorMunicpio {
+                                         print("Se cargo la Municipios")
+                                         print("\(unwrappedListaIncomezONA)")
+                                     } else {
+                                         print("Se cargo la lista muni")
+                                     }
+                                     
                                      
                                      shouldNav = true
                                  }
@@ -183,4 +196,3 @@ struct Login_Previews: PreviewProvider {
         Login()
     }
 }
-

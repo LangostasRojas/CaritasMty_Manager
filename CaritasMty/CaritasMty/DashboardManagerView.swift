@@ -69,10 +69,38 @@ struct ChartCompletionRatePopUp: View {
     }
 }
 
+struct ChartMPopUp: View {
+    @Binding var isShowing: Bool
+    var body: some View {
+        ZStack {
+            Color.clear.edgesIgnoringSafeArea(.all)
+
+            VStack {
+                ChartPorMunicipio(isComplete: true)
+                Button("Cerrar") {
+                    isShowing.toggle()
+                }
+                .padding()
+                .foregroundColor(.white).font(.body).bold().frame(width: 100.0, height: 40.0)
+                .background(Color("ColorAzulVerdePaleta"))
+                .cornerRadius(30)
+                .shadow(color:.black,radius: 2,y:2)
+            }
+            .background(Color("ColorDash"))
+            .cornerRadius(10)
+            .padding()
+            
+        }
+        .opacity(isShowing ? 1 : 0)
+    }
+}
+
 
 struct DashboardManagerView: View {
     
     @State private var showChartPopUp = false
+    @State private var showChartMPopUp = false
+    @State private var grafica: Int = 0
     
     var body: some View {
 
@@ -100,14 +128,23 @@ struct DashboardManagerView: View {
                     Button(action: {
                         showChartPopUp.toggle()
                     }) {
+                        
+                     
                         ChartCompletionRate(isComplete: false)
                             .frame(width: 200, height: 150)
                             .padding(.trailing, 10)
                     }
-                    Rectangle()
-                         .frame(width: 150,height: 150)
-                         .cornerRadius(20)
-                         .foregroundColor(Color("ColorDash"))
+                   
+                    Button(action: {
+                        
+                        showChartMPopUp.toggle()
+                    }) {
+                        
+            
+                        ChartPorMunicipio(isComplete: false)
+                            .frame(width: 200, height: 150)
+                            .padding(.trailing, 10)
+                    }
                 }
                 .padding(.bottom,5 )
                 HStack{
@@ -124,8 +161,14 @@ struct DashboardManagerView: View {
                 
             }
         }.transparentFullScreenCover(isPresented: $showChartPopUp) {
-            ChartCompletionRatePopUp(isShowing: $showChartPopUp)
-        }
+
+                ChartCompletionRatePopUp(isShowing: $showChartPopUp)
+
+        }.transparentFullScreenCover(isPresented: $showChartMPopUp) {
+            
+            ChartMPopUp(isShowing: $showChartMPopUp)
+
+    }
 
     }
 }
