@@ -3,7 +3,7 @@ import Charts
 
 
 struct ChartPorMunicipio: View {
-    var Ingresos: [MunicipiosDonaciones] = []
+    @State private var Ingresos: [MunicipiosDonaciones] = []
     @State private var isComplete: Bool
     @State private var height: CGFloat = 400.0
     @State private var width: CGFloat = 400.0
@@ -55,7 +55,10 @@ struct ChartPorMunicipio: View {
                         
                     }
                     
-                    if let Ingresos = IngresosPorMunicpio{
+                    if let IngresosPorMunicpio = IngresosPorMunicpio{
+                        
+                        Ingresos = IngresosPorMunicpio
+                        
                     }
                 }
                 .frame(width: width,height: height)
@@ -72,16 +75,20 @@ struct ChartPorMunicipio: View {
                     }
                 }
                 .chartXAxis{
-                    AxisMarks(){
-                        let value = $0.as(String.self)!
-                        AxisValueLabel{
-                            Text("\(value)").foregroundColor(.white)
-                            
+                    
+                    if isComplete{
+                        AxisMarks(){
+                            let value = $0.as(String.self)!
+                            AxisValueLabel{
+                                Text("\(value)").foregroundColor(.white).rotationEffect(.degrees(90))
+                                
+                            }
                         }
                     }
                 }
+  
                 
-                
+            
             }.background(Color("ColorDash"))
             
         
