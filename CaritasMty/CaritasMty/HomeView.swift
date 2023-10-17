@@ -29,7 +29,7 @@ struct HomeView: View {
 
                             }.alert(isPresented: $showingPop) {
 
-                                Alert(title: Text("Cerras sesion"), message: Text("¿Estas seguro de que quieres cerrar sesión?"), primaryButton: .destructive(Text("Si")){
+                                Alert(title: Text("Cerrar sesión"), message: Text("¿Estás seguro de que quieres cerrar sesión?"), primaryButton: .destructive(Text("Sí")){
 
                                     presentationMode.wrappedValue.dismiss()
 
