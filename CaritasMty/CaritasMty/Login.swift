@@ -96,6 +96,9 @@ struct Login: View {
                                      AvarageTickets = getAvarageTickets(userID: user.userId, token: user.accessToken)
                                      expDonations = getExpectedDonations(userID: user.userId, token: user.accessToken)
                                      
+                                     CollectedTickets = callCollected(token: user.accessToken)
+                                    print(CollectedTickets)
+                                     
                                      if let unwrappedListaTicketsR = listaTicketsR {
                                          print("Se cargo la listaTicketsR")
                                      } else {
@@ -110,6 +113,12 @@ struct Login: View {
                                          print("Se cargo la listaTicketsR")
                                      } else {
                                          print("listaTicketsR is nil")
+                                     }
+                                     if let unwrappedListaTicketsCollected = CollectedTickets {
+                                         print("Se cargo la CollectedTickets")
+                                         print(unwrappedListaTicketsCollected)
+                                     } else {
+                                         print("CollectedTickets is nil")
                                      }
                                      
                                      if let unwrappedListaTicketsManagers2 = listaTicketsManagers2 {

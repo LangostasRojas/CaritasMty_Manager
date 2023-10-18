@@ -12,7 +12,7 @@ func callTickets(userID: Int,token: String) -> [Ticket] {
     
     var lista: [Ticket] = []
     
-    var request = URLRequest(url: URL(string: "http://10.14.255.66:10206/get-recolector-tickets?userId=\(userID)")!, timeoutInterval: Double.infinity)
+    var request = URLRequest(url: URL(string: "https://equipo02.tc2007b.tec.mx:10206/get-recolector-tickets?userId=\(userID)")!, timeoutInterval: Double.infinity)
     request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
 
     request.httpMethod = "GET"
@@ -45,7 +45,7 @@ func getIncomeZona(userID: Int,token: String) -> [MunicipiosDonaciones] {
     
     var lista: [MunicipiosDonaciones] = []
     
-    var request = URLRequest(url: URL(string: "http://10.14.255.66:10206/get-zone-donations")!, timeoutInterval: Double.infinity)
+    var request = URLRequest(url: URL(string: "https://equipo02.tc2007b.tec.mx:10206/get-zone-donations")!, timeoutInterval: Double.infinity)
     request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
 
     request.httpMethod = "GET"
@@ -79,7 +79,7 @@ func getAvarageTickets(userID: Int,token: String) -> [AverageTickets] {
     
     var lista: [AverageTickets] = []
     
-    var request = URLRequest(url: URL(string: "http://10.14.255.66:10206/get-average-tickets")!, timeoutInterval: Double.infinity)
+    var request = URLRequest(url: URL(string: "https://equipo02.tc2007b.tec.mx:10206/get-average-tickets")!, timeoutInterval: Double.infinity)
     request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
 
     request.httpMethod = "GET"
@@ -111,7 +111,7 @@ func getExpectedDonations(userID: Int,token: String) -> ExpectedDonations {
     
     var ExpDonations: ExpectedDonations = ExpectedDonations(donacionesEsperadas: 0)
     
-    var request = URLRequest(url: URL(string: "http://10.14.255.66:10206/get-expected-donations")!, timeoutInterval: Double.infinity)
+    var request = URLRequest(url: URL(string: "https://equipo02.tc2007b.tec.mx:10206/get-expected-donations")!, timeoutInterval: Double.infinity)
     request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
 
     request.httpMethod = "GET"
@@ -143,7 +143,7 @@ func completeTicket(ticketID: Int, token: String, completion: @escaping (Bool) -
     
     let parameters = "{\"ticketId\": \(ticketID)}"
     if let postData = parameters.data(using: .utf8) {
-        var request = URLRequest(url: URL(string: "http://10.14.255.66:10206/marcar-completado")!)
+        var request = URLRequest(url: URL(string: "https://equipo02.tc2007b.tec.mx:10206/marcar-completado")!)
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"

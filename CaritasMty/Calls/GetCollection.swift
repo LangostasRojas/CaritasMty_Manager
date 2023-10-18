@@ -1,17 +1,11 @@
-//
-//  GetReporte.swift
-//  CaritasMty
-//
-//  Created by Alumno on 12/10/23.
-//
 
 import Foundation
 
-func getReporte(token: String) -> [Recibo] {
+func callCollected(token: String) -> [CollectedDonaciones] {
     
-    var lista: [Recibo] = []
+    var lista: [CollectedDonaciones] = []
     
-    var request = URLRequest(url: URL(string: "https://equipo02.tc2007b.tec.mx:10206/get-report-information")!, timeoutInterval: Double.infinity)
+    var request = URLRequest(url: URL(string: "https://equipo02.tc2007b.tec.mx:10206/get-collected-tickets-month")!, timeoutInterval: Double.infinity)
     request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
 
     request.httpMethod = "GET"
@@ -24,8 +18,8 @@ func getReporte(token: String) -> [Recibo] {
 
         if let data = data {
             do {
-                let reporteList = try jsonDecoder.decode([Recibo].self, from: data)
-                lista = reporteList
+                let ticketList = try jsonDecoder.decode([CollectedDonaciones].self, from: data)
+                lista = ticketList
             } catch {
                 print(error)
             }

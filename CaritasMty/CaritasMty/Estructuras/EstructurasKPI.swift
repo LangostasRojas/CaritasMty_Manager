@@ -21,6 +21,20 @@ struct MunicipiosDonaciones: Codable, Identifiable{
     }
 }
 
+struct CollectedDonaciones: Codable, Identifiable{
+    let id: Int
+    let mes: String
+    let recolectado: Int
+    let total: Int
+    
+    init(id: Int, mes: String,recolectado: Int,total: Int) {
+        self.id = id
+        self.mes = mes
+        self.recolectado = recolectado
+        self.total = total
+    }
+}
+
 struct AverageTickets: Codable, Identifiable{
     let fecha: String
     let id: Int
@@ -37,6 +51,7 @@ struct AverageTickets: Codable, Identifiable{
         self.total = total
     }
 }
+
 
 
 struct ExpectedDonations: Codable{
