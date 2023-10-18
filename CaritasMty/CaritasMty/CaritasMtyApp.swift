@@ -15,7 +15,6 @@ struct CaritasMtyApp: App {
         UISegmentedControl.appearance().selectedSegmentTintColor = verdePaleta
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
-        
     }
     var body: some Scene {
         WindowGroup {

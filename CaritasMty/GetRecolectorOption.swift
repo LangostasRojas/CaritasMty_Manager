@@ -10,7 +10,7 @@ import Foundation
 func getRecolectorOptions(token: String) -> [RecolectorOption] {
     var list: [RecolectorOption] = []
     
-    var request = URLRequest(url: URL(string: "https://equipo02.tc2007b.tec.mx:10206/get-list-collectors")!, timeoutInterval: Double.infinity)
+    var request = URLRequest(url: URL(string: "http://10.14.255.66:10206/get-list-collectors")!, timeoutInterval: Double.infinity)
 
     request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
     request.httpMethod = "GET"

@@ -12,7 +12,7 @@ func changeCollector(ticketID: Int, collectorId: Int, token: String, completion:
     
     let parameters = "{\"ticketId\": \(ticketID), \"collectorId\": \(collectorId)}"
     if let postData = parameters.data(using: .utf8) {
-        var request = URLRequest(url: URL(string: "https://equipo02.tc2007b.tec.mx:10206/change-ticket-collector")!)
+        var request = URLRequest(url: URL(string: "http://10.14.255.66:10206/change-ticket-collector")!)
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "PUT"
