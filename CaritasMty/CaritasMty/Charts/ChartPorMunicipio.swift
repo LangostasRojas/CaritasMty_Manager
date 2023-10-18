@@ -19,7 +19,7 @@ struct ChartPorMunicipio: View {
             HStack{
                 if isComplete{
                     
-                    Text("Porcentaje de compleción")
+                    Text("Donaciones por Municipio")
                         .foregroundColor(.white)
                         .font(.system(size: 34))
                         .fontWeight(.bold)
