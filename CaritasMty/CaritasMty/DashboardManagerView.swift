@@ -69,10 +69,119 @@ struct ChartCompletionRatePopUp: View {
     }
 }
 
+struct ChartMPopUp: View {
+    @Binding var isShowing: Bool
+    var body: some View {
+        ZStack {
+            Color.clear.edgesIgnoringSafeArea(.all)
+
+            VStack {
+                ChartPorMunicipio(isComplete: true)
+                Button("Cerrar") {
+                    isShowing.toggle()
+                }
+                .padding()
+                .foregroundColor(.white).font(.body).bold().frame(width: 100.0, height: 40.0)
+                .background(Color("ColorAzulVerdePaleta"))
+                .cornerRadius(30)
+                .shadow(color:.black,radius: 2,y:2)
+            }
+            .background(Color("ColorDash"))
+            .cornerRadius(10)
+            .padding()
+            
+        }
+        .opacity(isShowing ? 1 : 0)
+    }
+}
+
+struct ChartAveragePopUp: View {
+    @Binding var isShowing: Bool
+    var body: some View {
+        ZStack {
+            Color.clear.edgesIgnoringSafeArea(.all)
+
+            VStack {
+                AvarageTicketsChart(isComplete: true)
+                Button("Cerrar") {
+                    isShowing.toggle()
+                }
+                .padding()
+                .foregroundColor(.white).font(.body).bold().frame(width: 100.0, height: 40.0)
+                .background(Color("ColorAzulVerdePaleta"))
+                .cornerRadius(30)
+                .shadow(color:.black,radius: 2,y:2)
+            }
+            .background(Color("ColorDash"))
+            .cornerRadius(10)
+            .padding()
+            
+        }
+        .opacity(isShowing ? 1 : 0)
+    }
+}
+struct ChartExpectedPopup: View {
+    @Binding var isShowing: Bool
+    var body: some View {
+        ZStack {
+            Color.clear.edgesIgnoringSafeArea(.all)
+
+            VStack {
+                ExpectedDonationsView(isComplete: true)
+                Button("Cerrar") {
+                    isShowing.toggle()
+                }
+                .padding()
+                .foregroundColor(.white).font(.body).bold().frame(width: 100.0, height: 40.0)
+                .background(Color("ColorAzulVerdePaleta"))
+                .cornerRadius(30)
+                .shadow(color:.black,radius: 2,y:2)
+            }
+            .background(Color("ColorDash"))
+            .cornerRadius(10)
+            .padding()
+            
+        }
+        .opacity(isShowing ? 1 : 0)
+    }
+}
+
+struct ChartCollectedPopUp: View {
+    @Binding var isShowing: Bool
+    var body: some View {
+        ZStack {
+            Color.clear.edgesIgnoringSafeArea(.all)
+
+            VStack {
+                CollectedTicketsChart(isComplete: true)
+                Button("Cerrar") {
+                    isShowing.toggle()
+                }
+                .padding()
+                .foregroundColor(.white).font(.body).bold().frame(width: 100.0, height: 40.0)
+                .background(Color("ColorAzulVerdePaleta"))
+                .cornerRadius(30)
+                .shadow(color:.black,radius: 2,y:2)
+            }
+            .background(Color("ColorDash"))
+            .cornerRadius(10)
+            .padding()
+            
+        }
+        .opacity(isShowing ? 1 : 0)
+    }
+}
 
 struct DashboardManagerView: View {
     
     @State private var showChartPopUp = false
+    @State private var showChartMPopUp = false
+    @State private var showChartCollectedPopUp = false
+    @State private var showChartAveragePopUp = false
+    @State private var showChartExpectedPopUp = false
+
+    @State private var grafica: Int = 0
+    var donations: ExpectedDonations = ExpectedDonations(donacionesEsperadas: 120)
     
     var body: some View {
 
@@ -100,32 +209,91 @@ struct DashboardManagerView: View {
                     Button(action: {
                         showChartPopUp.toggle()
                     }) {
+                        
+                     
                         ChartCompletionRate(isComplete: false)
                             .frame(width: 200, height: 150)
                             .padding(.trailing, 10)
                     }
-                    Rectangle()
-                         .frame(width: 150,height: 150)
-                         .cornerRadius(20)
-                         .foregroundColor(Color("ColorDash"))
+                   
+                    Button(action: {
+                        
+                        showChartMPopUp.toggle()
+                    }) {
+                        
+            
+                        ChartPorMunicipio(isComplete: false)
+                            .frame(width: 200, height: 150)
+                            .padding(.trailing, 10)
+                    }
                 }
                 .padding(.bottom,5 )
+                
                 HStack{
-                   Rectangle()
-                        .frame(width: 175,height: 150)
-                        .cornerRadius(20)
-                        .foregroundColor(Color("ColorDash"))
-                    Rectangle()
-                         .frame(width: 175,height: 150)
-                         .cornerRadius(20)
-                         .foregroundColor(Color("ColorDash"))
+                    
+                    Button(action: {
+                        
+                        showChartAveragePopUp.toggle()
+                    }) {
+                        
+            
+                        AvarageTicketsChart(isComplete: false)
+                            .frame(width: 200, height: 150)
+                            .padding(.trailing, 10)
+                    }
+                    
+                    Button(action: {
+                        
+                        showChartCollectedPopUp.toggle()
+                    }) {
+                        
+            
+                        CollectedTicketsChart(isComplete: false)
+                            .frame(width: 200, height: 150)
+                            .padding(.trailing, 10)
+                    }
+                    
                 }
+                
+                Text("Tickets Promedio Por mes")
+                    .bold()
+                    .foregroundColor(.white)
+                    .font(.system(size: 20))
+                Button(action: {
+                    
+                    showChartExpectedPopUp.toggle()
+                }) {
+                    
+        
+                    ExpectedDonationsView(isComplete: false)
+                        .frame(width: 300, height: 50)
+                        .padding(.trailing, 10)
+                }
+                
                
                 
             }
         }.transparentFullScreenCover(isPresented: $showChartPopUp) {
-            ChartCompletionRatePopUp(isShowing: $showChartPopUp)
-        }
+
+                ChartCompletionRatePopUp(isShowing: $showChartPopUp)
+
+        }.transparentFullScreenCover(isPresented: $showChartMPopUp) {
+            
+            ChartMPopUp(isShowing: $showChartMPopUp)
+
+    }.transparentFullScreenCover(isPresented: $showChartAveragePopUp) {
+        
+        ChartAveragePopUp(isShowing: $showChartAveragePopUp)
+
+}.transparentFullScreenCover(isPresented: $showChartCollectedPopUp) {
+    
+    ChartCollectedPopUp(isShowing: $showChartCollectedPopUp)
+
+}.transparentFullScreenCover(isPresented: $showChartExpectedPopUp) {
+    
+    ChartExpectedPopup(isShowing: $showChartExpectedPopUp)
+
+}
 
     }
 }

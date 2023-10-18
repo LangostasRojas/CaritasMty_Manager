@@ -1,18 +1,19 @@
 //
-//  GetRecolectorOption.swift
+//  GetReporte.swift
 //  CaritasMty
 //
-//  Created by Alumno on 13/10/23.
+//  Created by Alumno on 12/10/23.
 //
 
 import Foundation
 
-func getRecolectorOptions(token: String) -> [RecolectorOption] {
-    var list: [RecolectorOption] = []
+func getReporte(token: String) -> [Recibo] {
     
-    var request = URLRequest(url: URL(string: "http://10.14.255.66:10206/get-list-collectors")!, timeoutInterval: Double.infinity)
-
+    var lista: [Recibo] = []
+    
+    var request = URLRequest(url: URL(string: "https://equipo02.tc2007b.tec.mx:10206/get-report-information")!, timeoutInterval: Double.infinity)
     request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
     request.httpMethod = "GET"
 
     let group = DispatchGroup()
@@ -23,8 +24,8 @@ func getRecolectorOptions(token: String) -> [RecolectorOption] {
 
         if let data = data {
             do {
-                let collectorlist = try jsonDecoder.decode([RecolectorOption].self, from: data)
-                list = collectorlist
+                let reporteList = try jsonDecoder.decode([Recibo].self, from: data)
+                lista = reporteList
             } catch {
                 print(error)
             }
@@ -35,7 +36,6 @@ func getRecolectorOptions(token: String) -> [RecolectorOption] {
 
     task.resume()
     group.wait()
-    
-    print(list)
-    return list
+
+    return lista
 }
