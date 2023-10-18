@@ -13,18 +13,15 @@
 //
 
 import SwiftUI
-import CoreLocation
 
 struct VistaDetailed: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var ticket : Ticket
-    @State var cargarondatos: Bool = false
-    @State var localEnd: Location
     @State var showCollectors: Bool
     @State var selectedCollector: Int
     @State var listCollectorOption: Array<RecolectorOption> = []
-    
+
     var body: some View {
         
         ZStack{
@@ -44,27 +41,14 @@ struct VistaDetailed: View {
                         .padding(.leading, 40.0)
                     Spacer()
                 }
-                
+               
+                    
                 Rectangle()
                     .fill(Color("ColorAzulVerdePaleta"))
                     .frame(width: 170,height: 7)
                     .cornerRadius(20)
-                    .offset(x:-64,y:-25).onAppear(){
-                        if let repartidor = repartidor{
-                            localEnd = callLocation(ticketID: ticket.id, token: repartidor.accessToken)
-                            print("Se cargaron los datos de localizacion")
-                            cargarondatos = true
-                        }
-                    }
-                if(cargarondatos){
-                    MapaView(latitud: localEnd.lat,longitud: localEnd.lng, customMark:
-                                [
-                                    Marcador(coordinate: .init(latitude: localEnd.lat, longitude: localEnd.lng))
-                    ]
-                    ).frame(width: 350,height: 300).cornerRadius(10).overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("ColorAzulVerdePaleta"), lineWidth: 3))
-                }else{
-                    ProgressView()
-                }
+                    .offset(x:-64,y:-25)
+                
                 HStack{
                     Group{
                     Text("Nombre: ")
@@ -75,6 +59,11 @@ struct VistaDetailed: View {
                     }.padding(.leading, 70.0).foregroundColor(.white)
                         Spacer()
                 }
+                
+                Image("Mapa")
+                    .resizable(resizingMode: .stretch)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 250)
                 
                 if (!showCollectors) {
                     VStack{
@@ -185,6 +174,6 @@ struct VistaDetailed: View {
 
 struct VistaTicket_Previews: PreviewProvider {
     static var previews: some View {
-        VistaDetailed(ticket: listaTickets[0],localEnd: Location(lat: 0.0, lng: 0.0), showCollectors: false, selectedCollector: 3)
+        VistaDetailed(ticket: listaTickets[0], showCollectors: false, selectedCollector: 3)
     }
 }
